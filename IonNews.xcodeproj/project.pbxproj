@@ -1,0 +1,943 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A303FB641EC44A4900702C2C /* IonMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A303FB631EC44A4900702C2C /* IonMenuViewController.m */; };
+		A303FB6A1EC467DD00702C2C /* IonAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A303FB691EC467DC00702C2C /* IonAnimation.m */; };
+		A30CBE651EAA04E600D2140A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A30CBE641EAA04E600D2140A /* GoogleService-Info.plist */; };
+		A30CBE681EAA09BD00D2140A /* UITextField+addition.m in Sources */ = {isa = PBXBuildFile; fileRef = A30CBE671EAA09BD00D2140A /* UITextField+addition.m */; };
+		A30CBE6B1EAA100A00D2140A /* IonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A30CBE6A1EAA100A00D2140A /* IonUtility.m */; };
+		A31A09F81EA628B900291F70 /* ApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A31A09F71EA628B900291F70 /* ApiRequest.m */; };
+		A32AE44E1EB22367003EE2A9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A32AE44D1EB22367003EE2A9 /* Default-568h@2x.png */; };
+		A354B4621E9B737C00ACC9F1 /* IonProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A354B4611E9B737C00ACC9F1 /* IonProfileViewController.m */; };
+		A37F04C71E92298200968B77 /* NSString+addition.m in Sources */ = {isa = PBXBuildFile; fileRef = A37F04C61E92298200968B77 /* NSString+addition.m */; };
+		A37F04CA1E92326500968B77 /* IonSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A37F04C91E92326500968B77 /* IonSignUpViewController.m */; };
+		A37F04D61E9619D500968B77 /* IonHomeContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A37F04D51E9619D500968B77 /* IonHomeContentViewController.m */; };
+		A37F04DF1E9644BE00968B77 /* IonNewsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A37F04DE1E9644BE00968B77 /* IonNewsCollectionViewCell.m */; };
+		A37F04E31E96457F00968B77 /* IonNewsTitleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A37F04E21E96457F00968B77 /* IonNewsTitleCollectionViewCell.m */; };
+		A37F04E81E96725600968B77 /* IonNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A37F04E71E96725600968B77 /* IonNewsDetailViewController.m */; };
+		A37F04F21E967C1E00968B77 /* MPTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A37F04F11E967C1E00968B77 /* MPTransition.m */; };
+		A37F04F61E967C4700968B77 /* MPAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A37F04F51E967C4700968B77 /* MPAnimation.m */; };
+		A37F04FF1E97669B00968B77 /* MPFlipTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A37F04FE1E97669B00968B77 /* MPFlipTransition.m */; };
+		A37F05021E9766AA00968B77 /* MPFlipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A37F05011E9766AA00968B77 /* MPFlipViewController.m */; };
+		A37F05051E9768FD00968B77 /* IonNewsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A37F05041E9768FD00968B77 /* IonNewsDetailVC.m */; };
+		A39292541EB377E200AFE063 /* IonHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A39292531EB377E200AFE063 /* IonHomeViewController.m */; };
+		A39292571EB3781E00AFE063 /* IonHomeProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A39292561EB3781E00AFE063 /* IonHomeProfileViewController.m */; };
+		A392925A1EB5228500AFE063 /* IonHomeProfileDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A39292591EB5228500AFE063 /* IonHomeProfileDetailCell.m */; };
+		A392925D1EB5232100AFE063 /* IonHomeProfileContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A392925C1EB5232100AFE063 /* IonHomeProfileContentCell.m */; };
+		A39292601EB5F1E800AFE063 /* IonHomeProfileCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A392925F1EB5F1E800AFE063 /* IonHomeProfileCollectionCell.m */; };
+		A3992F641EE4722B0040142E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A3992F631EE4722A0040142E /* libsqlite3.tbd */; };
+		A3992F671EE472A80040142E /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A3992F661EE472A80040142E /* DBManager.m */; };
+		A3A034601E8E5BD500E47060 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A0345F1E8E5BD500E47060 /* main.m */; };
+		A3A034631E8E5BD500E47060 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A034621E8E5BD500E47060 /* AppDelegate.m */; };
+		A3A034691E8E5BD500E47060 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A034671E8E5BD500E47060 /* Main.storyboard */; };
+		A3A0346B1E8E5BD500E47060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3A0346A1E8E5BD500E47060 /* Assets.xcassets */; };
+		A3A0346E1E8E5BD500E47060 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A0346C1E8E5BD500E47060 /* LaunchScreen.storyboard */; };
+		A3A034791E8E5BD500E47060 /* IonNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A034781E8E5BD500E47060 /* IonNewsTests.m */; };
+		A3A034881E8E5EDC00E47060 /* IonWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A034871E8E5EDC00E47060 /* IonWelcomeViewController.m */; };
+		A3A0348B1E8E693C00E47060 /* IonLoginViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A0348A1E8E693C00E47060 /* IonLoginViewViewController.m */; };
+		A3A84A2E1EC5954E0016F72B /* IonDismissalAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A84A2D1EC5954E0016F72B /* IonDismissalAnimation.m */; };
+		A3A84A311EC605C80016F72B /* menuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A84A301EC605C70016F72B /* menuTableViewCell.m */; };
+		A3A84A341EC822EA0016F72B /* IonAnimatedDismissal.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A84A331EC822EA0016F72B /* IonAnimatedDismissal.m */; };
+		A3A84A371EC9BBD80016F72B /* IonCustomActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A84A361EC9BBD70016F72B /* IonCustomActivityIndicator.m */; };
+		A3CE99A21EA75D1D008AEEFC /* requestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CE99A11EA75D1D008AEEFC /* requestHandler.m */; };
+		A3D908B51EA76E47005DED95 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D908B41EA76E47005DED95 /* Reachability.m */; };
+		A3D908BB1EA77DFD005DED95 /* IonUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D908BA1EA77DFD005DED95 /* IonUserInfo.m */; };
+		A3E5280C1E9E5A3C00CBE55C /* ion_imageUrlrequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E5280B1E9E5A3C00CBE55C /* ion_imageUrlrequest.m */; };
+		A3E5280F1E9F6C3F00CBE55C /* IonWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E5280E1E9F6C3F00CBE55C /* IonWebViewController.m */; };
+		A3EB720F1E9CB2AB000E88D3 /* IonSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3EB720E1E9CB2AB000E88D3 /* IonSettingViewController.m */; };
+		A3EB72121E9CC182000E88D3 /* IonForgotPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3EB72111E9CC182000E88D3 /* IonForgotPwdViewController.m */; };
+		A3F3665B1EB89BD600A3B18B /* IonProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F3665A1EB89BD600A3B18B /* IonProfileHeaderView.m */; };
+		A3F3665D1EB89BF100A3B18B /* IonHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3F3665C1EB89BF100A3B18B /* IonHomeHeaderView.xib */; };
+		A3FB9C6A1F3861AA00E3FBCE /* ChronicaPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3FB9C641F3861AA00E3FBCE /* ChronicaPro-Black.ttf */; };
+		A3FB9C6B1F3861AA00E3FBCE /* ChronicaPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3FB9C651F3861AA00E3FBCE /* ChronicaPro-Medium.ttf */; };
+		A3FB9C6C1F3861AA00E3FBCE /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3FB9C661F3861AA00E3FBCE /* OpenSans-Bold.ttf */; };
+		A3FB9C6D1F3861AA00E3FBCE /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3FB9C671F3861AA00E3FBCE /* OpenSans-Regular.ttf */; };
+		A3FB9C6E1F3861AA00E3FBCE /* SourceSerifPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3FB9C681F3861AA00E3FBCE /* SourceSerifPro-Bold.ttf */; };
+		A3FB9C6F1F3861AA00E3FBCE /* SourceSerifPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3FB9C691F3861AA00E3FBCE /* SourceSerifPro-Regular.ttf */; };
+		A824B696BB90C4BD39483BC3 /* libPods-IonNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1032FFDF9B9231CD01924 /* libPods-IonNews.a */; };
+		F50F7A328C179F2DDD61AF4B /* libPods-IonNewsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9EE282A49E07BA127B4814C /* libPods-IonNewsTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A3A034751E8E5BD500E47060 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3A034531E8E5BD500E47060 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A3A0345A1E8E5BD500E47060;
+			remoteInfo = IonNews;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C8E2BDF32A9BB35AB97603E /* Pods-IonNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IonNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-IonNews/Pods-IonNews.release.xcconfig"; sourceTree = "<group>"; };
+		795AFBB83A37D64F899CA461 /* Pods-IonNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IonNewsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IonNewsTests/Pods-IonNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		862C0FC6A7FE6582AD838139 /* Pods-IonNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IonNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IonNews/Pods-IonNews.debug.xcconfig"; sourceTree = "<group>"; };
+		97E9A12452CA3344513CB137 /* Pods-IonNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IonNewsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IonNewsTests/Pods-IonNewsTests.release.xcconfig"; sourceTree = "<group>"; };
+		A303FB621EC44A4900702C2C /* IonMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonMenuViewController.h; sourceTree = "<group>"; };
+		A303FB631EC44A4900702C2C /* IonMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonMenuViewController.m; sourceTree = "<group>"; };
+		A303FB681EC467DC00702C2C /* IonAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonAnimation.h; sourceTree = "<group>"; };
+		A303FB691EC467DC00702C2C /* IonAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonAnimation.m; sourceTree = "<group>"; };
+		A30CBE641EAA04E600D2140A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A30CBE661EAA09BD00D2140A /* UITextField+addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+addition.h"; sourceTree = "<group>"; };
+		A30CBE671EAA09BD00D2140A /* UITextField+addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+addition.m"; sourceTree = "<group>"; };
+		A30CBE691EAA100A00D2140A /* IonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonUtility.h; sourceTree = "<group>"; };
+		A30CBE6A1EAA100A00D2140A /* IonUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonUtility.m; sourceTree = "<group>"; };
+		A31A09F61EA628B900291F70 /* ApiRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiRequest.h; sourceTree = "<group>"; };
+		A31A09F71EA628B900291F70 /* ApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiRequest.m; sourceTree = "<group>"; };
+		A32AE44D1EB22367003EE2A9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A354B4601E9B737C00ACC9F1 /* IonProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonProfileViewController.h; sourceTree = "<group>"; };
+		A354B4611E9B737C00ACC9F1 /* IonProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonProfileViewController.m; sourceTree = "<group>"; };
+		A37F04C51E92298200968B77 /* NSString+addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+addition.h"; path = "../NSString+addition.h"; sourceTree = "<group>"; };
+		A37F04C61E92298200968B77 /* NSString+addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+addition.m"; path = "../NSString+addition.m"; sourceTree = "<group>"; };
+		A37F04C81E92326500968B77 /* IonSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonSignUpViewController.h; sourceTree = "<group>"; };
+		A37F04C91E92326500968B77 /* IonSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonSignUpViewController.m; sourceTree = "<group>"; };
+		A37F04D41E9619D500968B77 /* IonHomeContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonHomeContentViewController.h; sourceTree = "<group>"; };
+		A37F04D51E9619D500968B77 /* IonHomeContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonHomeContentViewController.m; sourceTree = "<group>"; };
+		A37F04DD1E9644BE00968B77 /* IonNewsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonNewsCollectionViewCell.h; sourceTree = "<group>"; };
+		A37F04DE1E9644BE00968B77 /* IonNewsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonNewsCollectionViewCell.m; sourceTree = "<group>"; };
+		A37F04E11E96457F00968B77 /* IonNewsTitleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonNewsTitleCollectionViewCell.h; sourceTree = "<group>"; };
+		A37F04E21E96457F00968B77 /* IonNewsTitleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonNewsTitleCollectionViewCell.m; sourceTree = "<group>"; };
+		A37F04E61E96725600968B77 /* IonNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonNewsDetailViewController.h; sourceTree = "<group>"; };
+		A37F04E71E96725600968B77 /* IonNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonNewsDetailViewController.m; sourceTree = "<group>"; };
+		A37F04F01E967C1E00968B77 /* MPTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTransition.h; sourceTree = "<group>"; };
+		A37F04F11E967C1E00968B77 /* MPTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTransition.m; sourceTree = "<group>"; };
+		A37F04F31E967C3700968B77 /* MPTransitionEnumerations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPTransitionEnumerations.h; sourceTree = "<group>"; };
+		A37F04F41E967C4700968B77 /* MPAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAnimation.h; sourceTree = "<group>"; };
+		A37F04F51E967C4700968B77 /* MPAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAnimation.m; sourceTree = "<group>"; };
+		A37F04FC1E97668C00968B77 /* MPFlipEnumerations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPFlipEnumerations.h; sourceTree = "<group>"; };
+		A37F04FD1E97669200968B77 /* MPFlipTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPFlipTransition.h; sourceTree = "<group>"; };
+		A37F04FE1E97669B00968B77 /* MPFlipTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPFlipTransition.m; sourceTree = "<group>"; };
+		A37F05001E9766A300968B77 /* MPFlipViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPFlipViewController.h; sourceTree = "<group>"; };
+		A37F05011E9766AA00968B77 /* MPFlipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPFlipViewController.m; sourceTree = "<group>"; };
+		A37F05031E9768FD00968B77 /* IonNewsDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonNewsDetailVC.h; sourceTree = "<group>"; };
+		A37F05041E9768FD00968B77 /* IonNewsDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonNewsDetailVC.m; sourceTree = "<group>"; };
+		A38D930C1EAE119100A530F2 /* IonNews.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IonNews.entitlements; sourceTree = "<group>"; };
+		A39292521EB377E200AFE063 /* IonHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonHomeViewController.h; sourceTree = "<group>"; };
+		A39292531EB377E200AFE063 /* IonHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonHomeViewController.m; sourceTree = "<group>"; };
+		A39292551EB3781E00AFE063 /* IonHomeProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonHomeProfileViewController.h; sourceTree = "<group>"; };
+		A39292561EB3781E00AFE063 /* IonHomeProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonHomeProfileViewController.m; sourceTree = "<group>"; };
+		A39292581EB5228500AFE063 /* IonHomeProfileDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonHomeProfileDetailCell.h; sourceTree = "<group>"; };
+		A39292591EB5228500AFE063 /* IonHomeProfileDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonHomeProfileDetailCell.m; sourceTree = "<group>"; };
+		A392925B1EB5232100AFE063 /* IonHomeProfileContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonHomeProfileContentCell.h; sourceTree = "<group>"; };
+		A392925C1EB5232100AFE063 /* IonHomeProfileContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonHomeProfileContentCell.m; sourceTree = "<group>"; };
+		A392925E1EB5F1E800AFE063 /* IonHomeProfileCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonHomeProfileCollectionCell.h; sourceTree = "<group>"; };
+		A392925F1EB5F1E800AFE063 /* IonHomeProfileCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonHomeProfileCollectionCell.m; sourceTree = "<group>"; };
+		A3992F631EE4722A0040142E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A3992F651EE472A80040142E /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		A3992F661EE472A80040142E /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		A3A0345B1E8E5BD500E47060 /* IonNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IonNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3A0345F1E8E5BD500E47060 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A3A034611E8E5BD500E47060 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A3A034621E8E5BD500E47060 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A3A034681E8E5BD500E47060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A3A0346A1E8E5BD500E47060 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A3A0346D1E8E5BD500E47060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A3A0346F1E8E5BD500E47060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3A034741E8E5BD500E47060 /* IonNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IonNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3A034781E8E5BD500E47060 /* IonNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IonNewsTests.m; sourceTree = "<group>"; };
+		A3A0347A1E8E5BD500E47060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3A034861E8E5EDC00E47060 /* IonWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IonWelcomeViewController.h; path = ../IonWelcomeViewController.h; sourceTree = "<group>"; };
+		A3A034871E8E5EDC00E47060 /* IonWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IonWelcomeViewController.m; path = ../IonWelcomeViewController.m; sourceTree = "<group>"; };
+		A3A034891E8E693B00E47060 /* IonLoginViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonLoginViewViewController.h; sourceTree = "<group>"; };
+		A3A0348A1E8E693C00E47060 /* IonLoginViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonLoginViewViewController.m; sourceTree = "<group>"; };
+		A3A84A2C1EC5954E0016F72B /* IonDismissalAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonDismissalAnimation.h; sourceTree = "<group>"; };
+		A3A84A2D1EC5954E0016F72B /* IonDismissalAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonDismissalAnimation.m; sourceTree = "<group>"; };
+		A3A84A2F1EC605C70016F72B /* menuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menuTableViewCell.h; sourceTree = "<group>"; };
+		A3A84A301EC605C70016F72B /* menuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = menuTableViewCell.m; sourceTree = "<group>"; };
+		A3A84A321EC822EA0016F72B /* IonAnimatedDismissal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonAnimatedDismissal.h; sourceTree = "<group>"; };
+		A3A84A331EC822EA0016F72B /* IonAnimatedDismissal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonAnimatedDismissal.m; sourceTree = "<group>"; };
+		A3A84A351EC9BBD70016F72B /* IonCustomActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonCustomActivityIndicator.h; sourceTree = "<group>"; };
+		A3A84A361EC9BBD70016F72B /* IonCustomActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonCustomActivityIndicator.m; sourceTree = "<group>"; };
+		A3CE99A01EA75D1D008AEEFC /* requestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = requestHandler.h; sourceTree = "<group>"; };
+		A3CE99A11EA75D1D008AEEFC /* requestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = requestHandler.m; sourceTree = "<group>"; };
+		A3CE99A31EA76061008AEEFC /* Ionconstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ionconstant.h; sourceTree = "<group>"; };
+		A3D908B31EA76E47005DED95 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		A3D908B41EA76E47005DED95 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		A3D908B91EA77DFD005DED95 /* IonUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonUserInfo.h; sourceTree = "<group>"; };
+		A3D908BA1EA77DFD005DED95 /* IonUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonUserInfo.m; sourceTree = "<group>"; };
+		A3D908C01EA79129005DED95 /* IonModelHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IonModelHeader.h; sourceTree = "<group>"; };
+		A3E5280A1E9E5A3C00CBE55C /* ion_imageUrlrequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ion_imageUrlrequest.h; sourceTree = "<group>"; };
+		A3E5280B1E9E5A3C00CBE55C /* ion_imageUrlrequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ion_imageUrlrequest.m; sourceTree = "<group>"; };
+		A3E5280D1E9F6C3F00CBE55C /* IonWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonWebViewController.h; sourceTree = "<group>"; };
+		A3E5280E1E9F6C3F00CBE55C /* IonWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonWebViewController.m; sourceTree = "<group>"; };
+		A3EB720D1E9CB2AB000E88D3 /* IonSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonSettingViewController.h; sourceTree = "<group>"; };
+		A3EB720E1E9CB2AB000E88D3 /* IonSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonSettingViewController.m; sourceTree = "<group>"; };
+		A3EB72101E9CC182000E88D3 /* IonForgotPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonForgotPwdViewController.h; sourceTree = "<group>"; };
+		A3EB72111E9CC182000E88D3 /* IonForgotPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonForgotPwdViewController.m; sourceTree = "<group>"; };
+		A3F366591EB89BD600A3B18B /* IonProfileHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonProfileHeaderView.h; sourceTree = "<group>"; };
+		A3F3665A1EB89BD600A3B18B /* IonProfileHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonProfileHeaderView.m; sourceTree = "<group>"; };
+		A3F3665C1EB89BF100A3B18B /* IonHomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IonHomeHeaderView.xib; sourceTree = "<group>"; };
+		A3FB9C641F3861AA00E3FBCE /* ChronicaPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChronicaPro-Black.ttf"; sourceTree = "<group>"; };
+		A3FB9C651F3861AA00E3FBCE /* ChronicaPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ChronicaPro-Medium.ttf"; sourceTree = "<group>"; };
+		A3FB9C661F3861AA00E3FBCE /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		A3FB9C671F3861AA00E3FBCE /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		A3FB9C681F3861AA00E3FBCE /* SourceSerifPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSerifPro-Bold.ttf"; sourceTree = "<group>"; };
+		A3FB9C691F3861AA00E3FBCE /* SourceSerifPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSerifPro-Regular.ttf"; sourceTree = "<group>"; };
+		B7F1032FFDF9B9231CD01924 /* libPods-IonNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IonNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9EE282A49E07BA127B4814C /* libPods-IonNewsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IonNewsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A3A034581E8E5BD500E47060 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3992F641EE4722B0040142E /* libsqlite3.tbd in Frameworks */,
+				A824B696BB90C4BD39483BC3 /* libPods-IonNews.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3A034711E8E5BD500E47060 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F50F7A328C179F2DDD61AF4B /* libPods-IonNewsTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		44DC471B5A709F1A9026FC93 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				862C0FC6A7FE6582AD838139 /* Pods-IonNews.debug.xcconfig */,
+				0C8E2BDF32A9BB35AB97603E /* Pods-IonNews.release.xcconfig */,
+				795AFBB83A37D64F899CA461 /* Pods-IonNewsTests.debug.xcconfig */,
+				97E9A12452CA3344513CB137 /* Pods-IonNewsTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6D9F387E6D95F6429BDC3B02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3992F631EE4722A0040142E /* libsqlite3.tbd */,
+				B7F1032FFDF9B9231CD01924 /* libPods-IonNews.a */,
+				C9EE282A49E07BA127B4814C /* libPods-IonNewsTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A354B4631E9B799B00ACC9F1 /* user_detail */ = {
+			isa = PBXGroup;
+			children = (
+				A3A034861E8E5EDC00E47060 /* IonWelcomeViewController.h */,
+				A3A034871E8E5EDC00E47060 /* IonWelcomeViewController.m */,
+				A3A034891E8E693B00E47060 /* IonLoginViewViewController.h */,
+				A3A0348A1E8E693C00E47060 /* IonLoginViewViewController.m */,
+				A37F04C81E92326500968B77 /* IonSignUpViewController.h */,
+				A37F04C91E92326500968B77 /* IonSignUpViewController.m */,
+				A3EB72101E9CC182000E88D3 /* IonForgotPwdViewController.h */,
+				A3EB72111E9CC182000E88D3 /* IonForgotPwdViewController.m */,
+				A354B4601E9B737C00ACC9F1 /* IonProfileViewController.h */,
+				A354B4611E9B737C00ACC9F1 /* IonProfileViewController.m */,
+			);
+			name = user_detail;
+			sourceTree = "<group>";
+		};
+		A363E5511EBC847F009D448A /* customFont */ = {
+			isa = PBXGroup;
+			children = (
+				A3FB9C641F3861AA00E3FBCE /* ChronicaPro-Black.ttf */,
+				A3FB9C651F3861AA00E3FBCE /* ChronicaPro-Medium.ttf */,
+				A3FB9C661F3861AA00E3FBCE /* OpenSans-Bold.ttf */,
+				A3FB9C671F3861AA00E3FBCE /* OpenSans-Regular.ttf */,
+				A3FB9C681F3861AA00E3FBCE /* SourceSerifPro-Bold.ttf */,
+				A3FB9C691F3861AA00E3FBCE /* SourceSerifPro-Regular.ttf */,
+			);
+			name = customFont;
+			sourceTree = "<group>";
+		};
+		A37F04E01E9644D000968B77 /* IonHomeView */ = {
+			isa = PBXGroup;
+			children = (
+				A39292521EB377E200AFE063 /* IonHomeViewController.h */,
+				A39292531EB377E200AFE063 /* IonHomeViewController.m */,
+				A39292551EB3781E00AFE063 /* IonHomeProfileViewController.h */,
+				A39292561EB3781E00AFE063 /* IonHomeProfileViewController.m */,
+				A37F04D41E9619D500968B77 /* IonHomeContentViewController.h */,
+				A37F04D51E9619D500968B77 /* IonHomeContentViewController.m */,
+			);
+			name = IonHomeView;
+			sourceTree = "<group>";
+		};
+		A37F04E41E964B2000968B77 /* webservices */ = {
+			isa = PBXGroup;
+			children = (
+				A3CE99A01EA75D1D008AEEFC /* requestHandler.h */,
+				A3CE99A11EA75D1D008AEEFC /* requestHandler.m */,
+				A31A09F61EA628B900291F70 /* ApiRequest.h */,
+				A31A09F71EA628B900291F70 /* ApiRequest.m */,
+			);
+			name = webservices;
+			sourceTree = "<group>";
+		};
+		A37F04E51E964B6000968B77 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				A37F04C51E92298200968B77 /* NSString+addition.h */,
+				A37F04C61E92298200968B77 /* NSString+addition.m */,
+				A30CBE661EAA09BD00D2140A /* UITextField+addition.h */,
+				A30CBE671EAA09BD00D2140A /* UITextField+addition.m */,
+			);
+			name = category;
+			sourceTree = "<group>";
+		};
+		A37F04F71E967DB400968B77 /* fold_animation */ = {
+			isa = PBXGroup;
+			children = (
+				A37F04F31E967C3700968B77 /* MPTransitionEnumerations.h */,
+				A37F04F01E967C1E00968B77 /* MPTransition.h */,
+				A37F04F11E967C1E00968B77 /* MPTransition.m */,
+				A37F04F41E967C4700968B77 /* MPAnimation.h */,
+				A37F04F51E967C4700968B77 /* MPAnimation.m */,
+				A37F04FC1E97668C00968B77 /* MPFlipEnumerations.h */,
+				A37F04FD1E97669200968B77 /* MPFlipTransition.h */,
+				A37F04FE1E97669B00968B77 /* MPFlipTransition.m */,
+				A37F05001E9766A300968B77 /* MPFlipViewController.h */,
+				A37F05011E9766AA00968B77 /* MPFlipViewController.m */,
+			);
+			name = fold_animation;
+			sourceTree = "<group>";
+		};
+		A37F04F81E96CD8700968B77 /* detailView */ = {
+			isa = PBXGroup;
+			children = (
+				A37F05031E9768FD00968B77 /* IonNewsDetailVC.h */,
+				A37F05041E9768FD00968B77 /* IonNewsDetailVC.m */,
+				A37F04E61E96725600968B77 /* IonNewsDetailViewController.h */,
+				A37F04E71E96725600968B77 /* IonNewsDetailViewController.m */,
+				A3E5280D1E9F6C3F00CBE55C /* IonWebViewController.h */,
+				A3E5280E1E9F6C3F00CBE55C /* IonWebViewController.m */,
+				A303FB621EC44A4900702C2C /* IonMenuViewController.h */,
+				A303FB631EC44A4900702C2C /* IonMenuViewController.m */,
+				A3A84A2F1EC605C70016F72B /* menuTableViewCell.h */,
+				A3A84A301EC605C70016F72B /* menuTableViewCell.m */,
+			);
+			name = detailView;
+			sourceTree = "<group>";
+		};
+		A3992F681EE472CB0040142E /* sqLite */ = {
+			isa = PBXGroup;
+			children = (
+				A3992F651EE472A80040142E /* DBManager.h */,
+				A3992F661EE472A80040142E /* DBManager.m */,
+			);
+			name = sqLite;
+			sourceTree = "<group>";
+		};
+		A3A034521E8E5BD500E47060 = {
+			isa = PBXGroup;
+			children = (
+				A32AE44D1EB22367003EE2A9 /* Default-568h@2x.png */,
+				A3A0345D1E8E5BD500E47060 /* IonNews */,
+				A3A034771E8E5BD500E47060 /* IonNewsTests */,
+				A3A0345C1E8E5BD500E47060 /* Products */,
+				44DC471B5A709F1A9026FC93 /* Pods */,
+				6D9F387E6D95F6429BDC3B02 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A3A0345C1E8E5BD500E47060 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3A0345B1E8E5BD500E47060 /* IonNews.app */,
+				A3A034741E8E5BD500E47060 /* IonNewsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A3A0345D1E8E5BD500E47060 /* IonNews */ = {
+			isa = PBXGroup;
+			children = (
+				A38D930C1EAE119100A530F2 /* IonNews.entitlements */,
+				A3A034611E8E5BD500E47060 /* AppDelegate.h */,
+				A3A034621E8E5BD500E47060 /* AppDelegate.m */,
+				A3A034671E8E5BD500E47060 /* Main.storyboard */,
+				A3D908B61EA77CAB005DED95 /* viewController */,
+				A3D908B71EA77CC8005DED95 /* view */,
+				A3D908B81EA77DAE005DED95 /* model */,
+				A3992F681EE472CB0040142E /* sqLite */,
+				A3D908BC1EA77E76005DED95 /* utilityClass */,
+				A37F04E41E964B2000968B77 /* webservices */,
+				A37F04E51E964B6000968B77 /* category */,
+				A37F04F71E967DB400968B77 /* fold_animation */,
+				A363E5511EBC847F009D448A /* customFont */,
+				A3A0346A1E8E5BD500E47060 /* Assets.xcassets */,
+				A3A0346C1E8E5BD500E47060 /* LaunchScreen.storyboard */,
+				A3A0346F1E8E5BD500E47060 /* Info.plist */,
+				A30CBE641EAA04E600D2140A /* GoogleService-Info.plist */,
+				A3A0345E1E8E5BD500E47060 /* Supporting Files */,
+			);
+			path = IonNews;
+			sourceTree = "<group>";
+		};
+		A3A0345E1E8E5BD500E47060 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A3A0345F1E8E5BD500E47060 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A3A034771E8E5BD500E47060 /* IonNewsTests */ = {
+			isa = PBXGroup;
+			children = (
+				A3A034781E8E5BD500E47060 /* IonNewsTests.m */,
+				A3A0347A1E8E5BD500E47060 /* Info.plist */,
+			);
+			path = IonNewsTests;
+			sourceTree = "<group>";
+		};
+		A3D908B61EA77CAB005DED95 /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				A3EB720D1E9CB2AB000E88D3 /* IonSettingViewController.h */,
+				A3EB720E1E9CB2AB000E88D3 /* IonSettingViewController.m */,
+				A354B4631E9B799B00ACC9F1 /* user_detail */,
+				A37F04E01E9644D000968B77 /* IonHomeView */,
+				A37F04F81E96CD8700968B77 /* detailView */,
+			);
+			name = viewController;
+			sourceTree = "<group>";
+		};
+		A3D908B71EA77CC8005DED95 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A37F04E11E96457F00968B77 /* IonNewsTitleCollectionViewCell.h */,
+				A37F04E21E96457F00968B77 /* IonNewsTitleCollectionViewCell.m */,
+				A37F04DD1E9644BE00968B77 /* IonNewsCollectionViewCell.h */,
+				A37F04DE1E9644BE00968B77 /* IonNewsCollectionViewCell.m */,
+				A39292581EB5228500AFE063 /* IonHomeProfileDetailCell.h */,
+				A39292591EB5228500AFE063 /* IonHomeProfileDetailCell.m */,
+				A392925B1EB5232100AFE063 /* IonHomeProfileContentCell.h */,
+				A392925C1EB5232100AFE063 /* IonHomeProfileContentCell.m */,
+				A392925E1EB5F1E800AFE063 /* IonHomeProfileCollectionCell.h */,
+				A392925F1EB5F1E800AFE063 /* IonHomeProfileCollectionCell.m */,
+				A3F3665C1EB89BF100A3B18B /* IonHomeHeaderView.xib */,
+				A3F366591EB89BD600A3B18B /* IonProfileHeaderView.h */,
+				A3F3665A1EB89BD600A3B18B /* IonProfileHeaderView.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		A3D908B81EA77DAE005DED95 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A3D908B91EA77DFD005DED95 /* IonUserInfo.h */,
+				A3D908BA1EA77DFD005DED95 /* IonUserInfo.m */,
+				A303FB681EC467DC00702C2C /* IonAnimation.h */,
+				A303FB691EC467DC00702C2C /* IonAnimation.m */,
+				A3A84A2C1EC5954E0016F72B /* IonDismissalAnimation.h */,
+				A3A84A2D1EC5954E0016F72B /* IonDismissalAnimation.m */,
+				A3A84A321EC822EA0016F72B /* IonAnimatedDismissal.h */,
+				A3A84A331EC822EA0016F72B /* IonAnimatedDismissal.m */,
+				A3A84A351EC9BBD70016F72B /* IonCustomActivityIndicator.h */,
+				A3A84A361EC9BBD70016F72B /* IonCustomActivityIndicator.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		A3D908BC1EA77E76005DED95 /* utilityClass */ = {
+			isa = PBXGroup;
+			children = (
+				A3CE99A31EA76061008AEEFC /* Ionconstant.h */,
+				A3D908C01EA79129005DED95 /* IonModelHeader.h */,
+				A3E5280A1E9E5A3C00CBE55C /* ion_imageUrlrequest.h */,
+				A3E5280B1E9E5A3C00CBE55C /* ion_imageUrlrequest.m */,
+				A30CBE691EAA100A00D2140A /* IonUtility.h */,
+				A30CBE6A1EAA100A00D2140A /* IonUtility.m */,
+				A3D908B31EA76E47005DED95 /* Reachability.h */,
+				A3D908B41EA76E47005DED95 /* Reachability.m */,
+			);
+			name = utilityClass;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A3A0345A1E8E5BD500E47060 /* IonNews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3A0347D1E8E5BD500E47060 /* Build configuration list for PBXNativeTarget "IonNews" */;
+			buildPhases = (
+				AD6831EA901299FC23F23261 /* [CP] Check Pods Manifest.lock */,
+				A3A034571E8E5BD500E47060 /* Sources */,
+				A3A034581E8E5BD500E47060 /* Frameworks */,
+				A3A034591E8E5BD500E47060 /* Resources */,
+				072B910207100804B1647C3E /* [CP] Embed Pods Frameworks */,
+				0BDD482AA27DA0D4F120048A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IonNews;
+			productName = IonNews;
+			productReference = A3A0345B1E8E5BD500E47060 /* IonNews.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A3A034731E8E5BD500E47060 /* IonNewsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3A034801E8E5BD500E47060 /* Build configuration list for PBXNativeTarget "IonNewsTests" */;
+			buildPhases = (
+				B6BA8B4126939A691B9E1DC9 /* [CP] Check Pods Manifest.lock */,
+				A3A034701E8E5BD500E47060 /* Sources */,
+				A3A034711E8E5BD500E47060 /* Frameworks */,
+				A3A034721E8E5BD500E47060 /* Resources */,
+				047895D871AF2D38DC955457 /* [CP] Embed Pods Frameworks */,
+				0D0D8CA6126710D74486ECFC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A3A034761E8E5BD500E47060 /* PBXTargetDependency */,
+			);
+			name = IonNewsTests;
+			productName = IonNewsTests;
+			productReference = A3A034741E8E5BD500E47060 /* IonNewsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A3A034531E8E5BD500E47060 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = mantraLabsGlobal;
+				TargetAttributes = {
+					A3A0345A1E8E5BD500E47060 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = D7234GJ94F;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					A3A034731E8E5BD500E47060 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = F3M7622L6E;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A3A0345A1E8E5BD500E47060;
+					};
+				};
+			};
+			buildConfigurationList = A3A034561E8E5BD500E47060 /* Build configuration list for PBXProject "IonNews" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A3A034521E8E5BD500E47060;
+			productRefGroup = A3A0345C1E8E5BD500E47060 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A3A0345A1E8E5BD500E47060 /* IonNews */,
+				A3A034731E8E5BD500E47060 /* IonNewsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A3A034591E8E5BD500E47060 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3A0346E1E8E5BD500E47060 /* LaunchScreen.storyboard in Resources */,
+				A3FB9C6C1F3861AA00E3FBCE /* OpenSans-Bold.ttf in Resources */,
+				A30CBE651EAA04E600D2140A /* GoogleService-Info.plist in Resources */,
+				A3FB9C6B1F3861AA00E3FBCE /* ChronicaPro-Medium.ttf in Resources */,
+				A3A0346B1E8E5BD500E47060 /* Assets.xcassets in Resources */,
+				A3FB9C6D1F3861AA00E3FBCE /* OpenSans-Regular.ttf in Resources */,
+				A32AE44E1EB22367003EE2A9 /* Default-568h@2x.png in Resources */,
+				A3F3665D1EB89BF100A3B18B /* IonHomeHeaderView.xib in Resources */,
+				A3FB9C6E1F3861AA00E3FBCE /* SourceSerifPro-Bold.ttf in Resources */,
+				A3A034691E8E5BD500E47060 /* Main.storyboard in Resources */,
+				A3FB9C6A1F3861AA00E3FBCE /* ChronicaPro-Black.ttf in Resources */,
+				A3FB9C6F1F3861AA00E3FBCE /* SourceSerifPro-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3A034721E8E5BD500E47060 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		047895D871AF2D38DC955457 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IonNewsTests/Pods-IonNewsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		072B910207100804B1647C3E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IonNews/Pods-IonNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0BDD482AA27DA0D4F120048A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IonNews/Pods-IonNews-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0D0D8CA6126710D74486ECFC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IonNewsTests/Pods-IonNewsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD6831EA901299FC23F23261 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B6BA8B4126939A691B9E1DC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A3A034571E8E5BD500E47060 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3D908B51EA76E47005DED95 /* Reachability.m in Sources */,
+				A37F04FF1E97669B00968B77 /* MPFlipTransition.m in Sources */,
+				A3EB72121E9CC182000E88D3 /* IonForgotPwdViewController.m in Sources */,
+				A303FB6A1EC467DD00702C2C /* IonAnimation.m in Sources */,
+				A31A09F81EA628B900291F70 /* ApiRequest.m in Sources */,
+				A39292571EB3781E00AFE063 /* IonHomeProfileViewController.m in Sources */,
+				A3E5280C1E9E5A3C00CBE55C /* ion_imageUrlrequest.m in Sources */,
+				A39292601EB5F1E800AFE063 /* IonHomeProfileCollectionCell.m in Sources */,
+				A30CBE6B1EAA100A00D2140A /* IonUtility.m in Sources */,
+				A3A0348B1E8E693C00E47060 /* IonLoginViewViewController.m in Sources */,
+				A37F04D61E9619D500968B77 /* IonHomeContentViewController.m in Sources */,
+				A3EB720F1E9CB2AB000E88D3 /* IonSettingViewController.m in Sources */,
+				A3992F671EE472A80040142E /* DBManager.m in Sources */,
+				A303FB641EC44A4900702C2C /* IonMenuViewController.m in Sources */,
+				A37F05051E9768FD00968B77 /* IonNewsDetailVC.m in Sources */,
+				A3A84A311EC605C80016F72B /* menuTableViewCell.m in Sources */,
+				A3F3665B1EB89BD600A3B18B /* IonProfileHeaderView.m in Sources */,
+				A37F04F61E967C4700968B77 /* MPAnimation.m in Sources */,
+				A30CBE681EAA09BD00D2140A /* UITextField+addition.m in Sources */,
+				A392925D1EB5232100AFE063 /* IonHomeProfileContentCell.m in Sources */,
+				A37F04DF1E9644BE00968B77 /* IonNewsCollectionViewCell.m in Sources */,
+				A3A84A341EC822EA0016F72B /* IonAnimatedDismissal.m in Sources */,
+				A3A034631E8E5BD500E47060 /* AppDelegate.m in Sources */,
+				A39292541EB377E200AFE063 /* IonHomeViewController.m in Sources */,
+				A37F04F21E967C1E00968B77 /* MPTransition.m in Sources */,
+				A3A84A371EC9BBD80016F72B /* IonCustomActivityIndicator.m in Sources */,
+				A37F04C71E92298200968B77 /* NSString+addition.m in Sources */,
+				A37F04CA1E92326500968B77 /* IonSignUpViewController.m in Sources */,
+				A354B4621E9B737C00ACC9F1 /* IonProfileViewController.m in Sources */,
+				A3A034601E8E5BD500E47060 /* main.m in Sources */,
+				A37F04E31E96457F00968B77 /* IonNewsTitleCollectionViewCell.m in Sources */,
+				A3A034881E8E5EDC00E47060 /* IonWelcomeViewController.m in Sources */,
+				A3CE99A21EA75D1D008AEEFC /* requestHandler.m in Sources */,
+				A37F04E81E96725600968B77 /* IonNewsDetailViewController.m in Sources */,
+				A37F05021E9766AA00968B77 /* MPFlipViewController.m in Sources */,
+				A3A84A2E1EC5954E0016F72B /* IonDismissalAnimation.m in Sources */,
+				A3D908BB1EA77DFD005DED95 /* IonUserInfo.m in Sources */,
+				A3E5280F1E9F6C3F00CBE55C /* IonWebViewController.m in Sources */,
+				A392925A1EB5228500AFE063 /* IonHomeProfileDetailCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3A034701E8E5BD500E47060 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3A034791E8E5BD500E47060 /* IonNewsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A3A034761E8E5BD500E47060 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A3A0345A1E8E5BD500E47060 /* IonNews */;
+			targetProxy = A3A034751E8E5BD500E47060 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A3A034671E8E5BD500E47060 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3A034681E8E5BD500E47060 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A3A0346C1E8E5BD500E47060 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3A0346D1E8E5BD500E47060 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A3A0347B1E8E5BD500E47060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A3A0347C1E8E5BD500E47060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A3A0347E1E8E5BD500E47060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 862C0FC6A7FE6582AD838139 /* Pods-IonNews.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = IonNews/IonNews.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = D7234GJ94F;
+				INFOPLIST_FILE = IonNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.IonNews.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A3A0347F1E8E5BD500E47060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C8E2BDF32A9BB35AB97603E /* Pods-IonNews.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = IonNews/IonNews.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = D7234GJ94F;
+				INFOPLIST_FILE = IonNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.IonNews.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A3A034811E8E5BD500E47060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 795AFBB83A37D64F899CA461 /* Pods-IonNewsTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = F3M7622L6E;
+				INFOPLIST_FILE = IonNewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.IonNews.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IonNews.app/IonNews";
+			};
+			name = Debug;
+		};
+		A3A034821E8E5BD500E47060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97E9A12452CA3344513CB137 /* Pods-IonNewsTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = F3M7622L6E;
+				INFOPLIST_FILE = IonNewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.IonNews.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IonNews.app/IonNews";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A3A034561E8E5BD500E47060 /* Build configuration list for PBXProject "IonNews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3A0347B1E8E5BD500E47060 /* Debug */,
+				A3A0347C1E8E5BD500E47060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3A0347D1E8E5BD500E47060 /* Build configuration list for PBXNativeTarget "IonNews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3A0347E1E8E5BD500E47060 /* Debug */,
+				A3A0347F1E8E5BD500E47060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3A034801E8E5BD500E47060 /* Build configuration list for PBXNativeTarget "IonNewsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3A034811E8E5BD500E47060 /* Debug */,
+				A3A034821E8E5BD500E47060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A3A034531E8E5BD500E47060 /* Project object */;
+}
