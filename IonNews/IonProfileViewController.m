@@ -90,7 +90,7 @@
     [self.role designTextField];
 
       self.emailNameTxtField.enabled = NO;
-    self.phoneTxtField.enabled = NO;
+//    self.phoneTxtField.enabled = NO;
  //   self.role.enabled = NO;
     
     
@@ -164,6 +164,76 @@ numberOfRowsInComponent:(NSInteger)component{
     
 }
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (textField == self.phoneTxtField) {
+        int length = (int)[self getLength:textField.text];
+        //NSLog(@"Length  =  %d ",length);
+        
+        if(length == 10)
+        {
+            if(range.length == 0)
+                return NO;
+        }
+        
+        if(length == 3)
+        {
+            NSString *num = [self formatNumber:textField.text];
+            textField.text = [NSString stringWithFormat:@"(%@) ",num];
+            
+            if(range.length > 0)
+                textField.text = [NSString stringWithFormat:@"%@",[num substringToIndex:3]];
+        }
+        else if(length == 6)
+        {
+            NSString *num = [self formatNumber:textField.text];
+            //NSLog(@"%@",[num  substringToIndex:3]);
+            //NSLog(@"%@",[num substringFromIndex:3]);
+            textField.text = [NSString stringWithFormat:@"(%@) %@-",[num  substringToIndex:3],[num substringFromIndex:3]];
+            
+            if(range.length > 0)
+                textField.text = [NSString stringWithFormat:@"(%@) %@",[num substringToIndex:3],[num substringFromIndex:3]];
+        }
+    }
+    
+    return YES;
+}
+
+- (NSString *)formatNumber:(NSString *)mobileNumber
+{
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"(" withString:@""];
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@")" withString:@""];
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"+" withString:@""];
+    
+    NSLog(@"%@", mobileNumber);
+    
+    int length = (int)[mobileNumber length];
+    if(length > 10)
+    {
+        mobileNumber = [mobileNumber substringFromIndex: length-10];
+        NSLog(@"%@", mobileNumber);
+        
+    }
+    
+    return mobileNumber;
+}
+
+- (int)getLength:(NSString *)mobileNumber
+{
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"(" withString:@""];
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@")" withString:@""];
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"+" withString:@""];
+    
+    int length = (int)[mobileNumber length];
+    
+    return length;
+}
+
+
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     
@@ -195,14 +265,29 @@ numberOfRowsInComponent:(NSInteger)component{
         [self dismissKeyboard];
         [[IonUtility sharedInstance] alertView:errMsg viewController:self];
     }else{
-        NSDictionary * paramDict =  @{
-                                      @"first_name": self.firstNameTxtField.text,
-                                      @"last_name": self.lastNameTxtField.text,
-                                      @"company": self.orgTxtField.text,
-                                      @"designation": self.desgTxtField.text,
-                                      @"role":self.role.text,
-                                      @"role_id":role_id
-                                      };
+        NSDictionary * paramDict;
+        if (role_id != nil) {
+            paramDict =  @{
+                                          @"first_name": self.firstNameTxtField.text,
+                                          @"last_name": self.lastNameTxtField.text,
+                                          @"company": self.orgTxtField.text,
+                                          @"designation": self.desgTxtField.text,
+                                          @"role":self.role.text,
+                                          @"role_id":role_id,
+                                          @"phone":[self formatNumber:self.phoneTxtField.text]
+                                          };
+        }else{
+            paramDict =  @{
+                                          @"first_name": self.firstNameTxtField.text,
+                                          @"last_name": self.lastNameTxtField.text,
+                                          @"company": self.orgTxtField.text,
+                                          @"designation": self.desgTxtField.text,
+                                          @"role":self.role.text,
+                                          @"phone":[self formatNumber:self.phoneTxtField.text],
+                                          @"role_id":@""
+                                          };
+        }
+        
         
         [[requestHandler sharedInstance] updateProfileresponseMethod:paramDict viewcontroller:self withHandler:^(id  _Nonnull response) {
             dispatch_async(dispatch_get_main_queue(), ^{

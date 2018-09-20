@@ -408,49 +408,55 @@
                 
                 NSLog(@"home screen response %@", result);
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    titles =[[result allKeys] mutableCopy];
                     
-                    [[DBManager getSharedInstance] deleteAllRows];
-                    
-                    for (int i=0; i< titles.count ; i++) {
+                    if (![[result valueForKey:@"status"]  isEqual: @"No Story"]) {
                         
-                        [ArrangeDict setValue:[titles objectAtIndex:i] forKey:[[[result valueForKey:[titles objectAtIndex:i]] objectAtIndex:0] valueForKey:@"priority"]];
+                        titles =[[result allKeys] mutableCopy];
                         
-                        NSArray *articleDetail = [result valueForKey:[titles objectAtIndex:i]];
-                        NSLog(@"value for title %lu", (unsigned long)articleDetail.count);
-                        NSArray  *priority= [[[result valueForKey:[titles objectAtIndex:i]] objectAtIndex:0] valueForKey:@"priority"];
-                        NSLog(@"priority order for home response %@", priority);
+                        [[DBManager getSharedInstance] deleteAllRows];
                         
-                        for (int j=0; j < articleDetail.count; j++) {
+                        for (int i=0; i< titles.count ; i++) {
                             
-                            [[DBManager getSharedInstance] saveData:[titles objectAtIndex:i] title:[[[result valueForKey:[titles objectAtIndex:i]] objectAtIndex:j] valueForKey:@"title"] content:[[[result valueForKey:[titles objectAtIndex:i]] objectAtIndex:j] valueForKey:@"content"] image:[[[result valueForKey:[titles objectAtIndex:i]] objectAtIndex:j] valueForKey:@"image"] crawl_url:[[[result valueForKey:[titles objectAtIndex:i]] objectAtIndex:j] valueForKey:@"crawl_url"]];
+                            [ArrangeDict setValue:[titles objectAtIndex:i] forKey:[[[result valueForKey:[titles objectAtIndex:i]] objectAtIndex:0] valueForKey:@"priority"]];
+                            
+                            NSArray *articleDetail = [result valueForKey:[titles objectAtIndex:i]];
+                            NSLog(@"value for title %lu", (unsigned long)articleDetail.count);
+                            NSArray  *priority= [[[result valueForKey:[titles objectAtIndex:i]] objectAtIndex:0] valueForKey:@"priority"];
+                            NSLog(@"priority order for home response %@", priority);
+                            
+                            for (int j=0; j < articleDetail.count; j++) {
+                                
+                                [[DBManager getSharedInstance] saveData:[titles objectAtIndex:i] title:[[[result valueForKey:[titles objectAtIndex:i]] objectAtIndex:j] valueForKey:@"title"] content:[[[result valueForKey:[titles objectAtIndex:i]] objectAtIndex:j] valueForKey:@"content"] image:[[[result valueForKey:[titles objectAtIndex:i]] objectAtIndex:j] valueForKey:@"image"] crawl_url:[[[result valueForKey:[titles objectAtIndex:i]] objectAtIndex:j] valueForKey:@"crawl_url"]];
+                            }
                         }
+                        
+                        NSArray *sortedKeys = [[ArrangeDict allKeys] sortedArrayUsingSelector: @selector(compare:)];
+                        //  NSMutableDictionary *sortedDict = [[NSMutableDictionary alloc] init];
+                        [sortedTitles removeAllObjects];
+                        [sortedObject removeAllObjects];
+                        for (NSString *key in sortedKeys)
+                            [sortedTitles addObject: [ArrangeDict objectForKey: key]];
+                        for (int i=0; i< sortedTitles.count; i++) {
+                            //                    [sortedDict setObject:[result valueForKey:[sortedValues objectAtIndex:i]] forKey:[sortedValues objectAtIndex:i]];
+                            [sortedObject insertObject:[result valueForKey:[sortedTitles objectAtIndex:i]] atIndex:i];
+                        }
+                        
+                        
+                        NSLog(@"print arrangeDict  %@ %@ %@ %@", ArrangeDict, sortedKeys, sortedTitles , sortedObject);
+                        [titles addObject:@"         "];
+                        [sortedTitles addObject:@"         "];
+                        indexPathAlreadySelected = 0;
+                        
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            
+                            [_newsCollectionView reloadData];
+                            [_newsTitleCollectionView reloadData];
+                            
+                            
+                        });
+                        
                     }
                     
-                    NSArray *sortedKeys = [[ArrangeDict allKeys] sortedArrayUsingSelector: @selector(compare:)];
-                    //  NSMutableDictionary *sortedDict = [[NSMutableDictionary alloc] init];
-                    [sortedTitles removeAllObjects];
-                    [sortedObject removeAllObjects];
-                    for (NSString *key in sortedKeys)
-                        [sortedTitles addObject: [ArrangeDict objectForKey: key]];
-                    for (int i=0; i< sortedTitles.count; i++) {
-                        //                    [sortedDict setObject:[result valueForKey:[sortedValues objectAtIndex:i]] forKey:[sortedValues objectAtIndex:i]];
-                        [sortedObject insertObject:[result valueForKey:[sortedTitles objectAtIndex:i]] atIndex:i];
-                    }
-                    
-                    
-                    NSLog(@"print arrangeDict  %@ %@ %@ %@", ArrangeDict, sortedKeys, sortedTitles , sortedObject);
-                    [titles addObject:@"         "];
-                    [sortedTitles addObject:@"         "];
-                    indexPathAlreadySelected = 0;
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        
-                        [_newsCollectionView reloadData];
-                        [_newsTitleCollectionView reloadData];
-                        
-                        
-                    });
                 });
             }
             

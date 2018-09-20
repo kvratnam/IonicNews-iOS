@@ -18,10 +18,17 @@
  BOOL isLikeBool;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:YES];
+    
+}
+
 - (void)viewDidLoad {
     
     [[IonCustomActivityIndicator sharedInstance] acitivityIndicatorPresent:self.view];
     self.webview.delegate = self;
+    NSLog(@"Crawl URL:%@",self.crawl_url);
     dispatch_async(dispatch_get_main_queue(), ^{
         NSURL *url = [NSURL URLWithString:[self.crawl_url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 
@@ -48,6 +55,7 @@
     
     [[IonCustomActivityIndicator sharedInstance] activityIndicatorDismiss:self.view];
 }
+
 
 #pragma mark - action
 

@@ -50,10 +50,12 @@
         cell.title.text = [[[self.result objectAtIndex:indexPath.row] valueForKey:@"title"] uppercaseString];
         cell.subtitle.text = [[self.result objectAtIndex:indexPath.row] valueForKey:@"sub_title"];
     }else{
-        url = [[[self.resultForStory valueForKey:[self.titlesForStory objectAtIndex:indexPath.row]] objectAtIndex:0] valueForKey:@"image"];
-        webStringURL = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        cell.title.text = [[self.titlesForStory objectAtIndex:indexPath.row] uppercaseString];
-        cell.subtitle.text = [[[self.resultForStory valueForKey:[self.titlesForStory objectAtIndex:indexPath.row]] objectAtIndex:0] valueForKey:@"title"];
+        if ( self.resultForStory.count > 1) {
+            url = [[[self.resultForStory valueForKey:[self.titlesForStory objectAtIndex:indexPath.row]] objectAtIndex:0] valueForKey:@"image"];
+            webStringURL = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            cell.title.text = [[self.titlesForStory objectAtIndex:indexPath.row] uppercaseString];
+            cell.subtitle.text = [[[self.resultForStory valueForKey:[self.titlesForStory objectAtIndex:indexPath.row]] objectAtIndex:0] valueForKey:@"title"];
+        }
     }
     
        NSURL * URL = [NSURL URLWithString:webStringURL];

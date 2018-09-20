@@ -65,12 +65,12 @@ NSString *const KuserGroupsUrl = @"category/user_group";
                 
             default:
                 
-                [self alertViewMethod:@"something went wrong" viewController:view];
+                [self alertViewMethod:@"You seem to be offline.\nCheck your network settings." viewController:view];
                 break;
         }
         
     }else{
-        [self alertViewMethod:@"something went wrong" viewController:view];
+        [self alertViewMethod:@"You seem to be offline.\nCheck your network settings." viewController:view];
     }
     return nil;
 }

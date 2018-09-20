@@ -27,6 +27,7 @@
     title = @[@"Like",@"Share",@"Open in Safari"];
     images = @[@"like_white",@"share",@"safari"];
         IonwebVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"webView"];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -93,6 +94,8 @@
             }
             break;
         case 2:
+            IonwebVC.crawl_url = self.crawl_url;
+            IonwebVC.content_id = self.content_id;
             [self presentViewController:IonwebVC animated:YES completion:nil];
             break;
             
