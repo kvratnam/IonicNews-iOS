@@ -9,8 +9,11 @@
 #import "ApiRequest.h"
 #import "Ionconstant.h"
 
-static NSString *domainUrl = @"http://52.89.47.47/api/";  //production url
-//static NSString *domainUrl = @"http://34.211.114.131/api/";  //development url
+static NSString *domainUrl = @"https://www.anionnews.com/api/";  //production url
+//static NSString *domainUrl = @"http://dev.anionnews.com/api/"; // New Dev URL
+
+//static NSString *domainUrl = @"http://34.212.156.81/api/";  //Old production url
+//static NSString *domainUrl = @"http://50.112.57.146/api/"; // Old Dev URL
 
 @implementation ApiRequest
 
@@ -46,7 +49,7 @@ static NSString *domainUrl = @"http://52.89.47.47/api/";  //production url
     return request;
 }
 
--(void)getRequest:(NSString *)path param:(NSDictionary *)paramDict withHandler:(apiHandler)handler{
+-(void) getRequest:(NSString *)path param:(NSDictionary *)paramDict withHandler:(apiHandler)handler{
 
     NSURLRequest *request = [self createRequest:path method:@"GET" param:paramDict];
     NSURLSessionTask * task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {

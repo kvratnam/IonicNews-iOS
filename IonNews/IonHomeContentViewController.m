@@ -349,7 +349,7 @@
     if ([reachabilityStatus isEqualToString:@"YES"]) {
         [[requestHandler sharedInstance] homePageStoryresponseMethod:nil viewcontroller:self withHandler:^(id response) {
             result = response;
-            NSLog(@"home screen response %@", result);
+            NSLog(@"home screen response reachabilityCheck::: %@", result);
             
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -417,12 +417,12 @@
                         
                         for (int i=0; i< titles.count ; i++) {
                             
-                            [ArrangeDict setValue:[titles objectAtIndex:i] forKey:[[[result valueForKey:[titles objectAtIndex:i]] objectAtIndex:0] valueForKey:@"priority"]];
+                            [ArrangeDict setValue:[titles objectAtIndex:i] forKey:[[[result valueForKey:[titles objectAtIndex:i]] objectAtIndex:0] valueForKey:@"id"]];
                             
                             NSArray *articleDetail = [result valueForKey:[titles objectAtIndex:i]];
                             NSLog(@"value for title %lu", (unsigned long)articleDetail.count);
                             NSArray  *priority= [[[result valueForKey:[titles objectAtIndex:i]] objectAtIndex:0] valueForKey:@"priority"];
-                            NSLog(@"priority order for home response %@", priority);
+                            NSLog(@"priority order for home response %@", ArrangeDict);
                             
                             for (int j=0; j < articleDetail.count; j++) {
                                 
@@ -431,10 +431,19 @@
                         }
                         
                         NSArray *sortedKeys = [[ArrangeDict allKeys] sortedArrayUsingSelector: @selector(compare:)];
-                        //  NSMutableDictionary *sortedDict = [[NSMutableDictionary alloc] init];
+                        NSArray *SortedKeys1 = [ArrangeDict keysSortedByValueUsingSelector:@selector(compare:)]; // Oct 26
+                        
+                        
+                        NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO selector:@selector(compare:)];
+                        NSArray* sortedArray = [sortedKeys sortedArrayUsingDescriptors:@[sortDescriptor]];
+                        
+                        
+                        
                         [sortedTitles removeAllObjects];
                         [sortedObject removeAllObjects];
-                        for (NSString *key in sortedKeys)
+                        NSLog(@"SortedKeys1 :%@ sortedKeys: %@ sortedArray: %@",SortedKeys1,sortedKeys,sortedArray);
+                        
+                        for (NSString *key in sortedArray) // (NSString *key in sortedKeys)  Oct 23
                             [sortedTitles addObject: [ArrangeDict objectForKey: key]];
                         for (int i=0; i< sortedTitles.count; i++) {
                             //                    [sortedDict setObject:[result valueForKey:[sortedValues objectAtIndex:i]] forKey:[sortedValues objectAtIndex:i]];
@@ -442,7 +451,8 @@
                         }
                         
                         
-                        NSLog(@"print arrangeDict  %@ %@ %@ %@", ArrangeDict, sortedKeys, sortedTitles , sortedObject);
+//                        NSLog(@"print arrangeDict  %@ %@ %@", ArrangeDict, sortedKeys, sortedTitles);
+//                        NSLog(@"SortedKeysSortedKeys : %@ %@",SortedKeys1, ArrangeDictSorting);
                         [titles addObject:@"         "];
                         [sortedTitles addObject:@"         "];
                         indexPathAlreadySelected = 0;

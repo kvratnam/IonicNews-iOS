@@ -19,7 +19,7 @@
 
     NSDictionary *user_detail;
     NSArray *pickerArray;
-     NSString *role_id;
+    NSString *role_id;
 }
 
 - (void)viewDidLoad {
@@ -71,10 +71,15 @@
 
     
     user_detail = [[NSUserDefaults standardUserDefaults] objectForKey:@"user_detail"];
-    
+    NSLog(@"Given USer Details : %@",user_detail);
     self.firstNameTxtField.text = [user_detail objectForKey:@"first_name"];
     self.lastNameTxtField.text = [user_detail objectForKey:@"last_name"];
-    self.phoneTxtField.text = [user_detail objectForKey:@"phone"];
+    if ([[user_detail objectForKey:@"phone"] length] > 0) {
+         self.phoneTxtField.text =  [NSString stringWithFormat:@"(%@) %@-%@",[[user_detail objectForKey:@"phone"]  substringToIndex:3],[[user_detail objectForKey:@"phone"] substringWithRange:NSMakeRange(3, 3)],[[user_detail objectForKey:@"phone"] substringFromIndex:6]];
+    }else{
+        self.phoneTxtField.text = @"";
+    }
+   
     self.emailNameTxtField.text = [user_detail objectForKey:@"email"];
     self.orgTxtField.text = [user_detail objectForKey:@"company"];
     self.desgTxtField.text = [user_detail objectForKey:@"designation"];
@@ -292,7 +297,9 @@ numberOfRowsInComponent:(NSInteger)component{
         [[requestHandler sharedInstance] updateProfileresponseMethod:paramDict viewcontroller:self withHandler:^(id  _Nonnull response) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[NSUserDefaults standardUserDefaults] setObject:response forKey:@"user_detail"];
-                [self dismissViewControllerAnimated:YES completion:nil];
+//                [self dismissViewControllerAnimated:YES completion:nil];
+                [[IonUtility sharedInstance] alertView:@"User Details Updated Successfully!" viewController:self];
+                [self dismissKeyboard];
             });
         }];
     }

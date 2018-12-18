@@ -35,7 +35,9 @@
         self.role = [self objectOrNilForKey:@"role" fromDictionary:dict];
         self.role_id = [self objectOrNilForKey:@"role_id" fromDictionary:dict];
         self.profileImg = [self objectOrNilForKey:@"profileImg" fromDictionary:dict];
+        self.user_id = [self objectOrNilForKey:@"id" fromDictionary:dict];
         self.token = [self objectOrNilForKey:@"token" fromDictionary:dict];
+        
     }
     
     return self;
@@ -55,6 +57,7 @@
     [mutabledict setValue:self.role forKey:@"role"];
     [mutabledict setValue:self.role_id forKey:@"role_id"];
     [mutabledict setValue:self.profileImg forKey:@"profileImg"];
+    [mutabledict setValue:self.user_id forKey:@"id"];
     [mutabledict setValue:self.token forKey:@"token"];
     
     return [NSDictionary dictionaryWithDictionary:mutabledict];
@@ -88,6 +91,7 @@
     self.role = [aDecoder decodeObjectForKey:@"role"];
     self.role_id = [aDecoder decodeObjectForKey:@"role_id"];
     self.profileImg = [aDecoder decodeObjectForKey:@"profileImg"];
+    self.user_id = [aDecoder decodeObjectForKey:@"id"];
     self.token = [aDecoder decodeObjectForKey:@"token"];
     
     return self;
@@ -104,7 +108,9 @@
     [aCoder encodeObject:self.role forKey:@"role"];
     [aCoder encodeObject:self.role_id forKey:@"role_id"];
     [aCoder encodeObject:self.profileImg forKey:@"profileImg"];
+    [aCoder encodeObject:self.user_id forKey:@"id"];
     [aCoder encodeObject:self.token forKey:@"token"];
+   
 
 }
 
@@ -120,6 +126,7 @@
         copy.role = [self copyWithZone:zone];
         copy.role_id = [self copyWithZone:zone];
         copy.profileImg = [self copyWithZone:zone];
+        copy.user_id = [self copyWithZone:zone];
         copy.token = [self copyWithZone:zone];
         
     }

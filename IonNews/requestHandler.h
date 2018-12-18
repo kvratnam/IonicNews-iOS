@@ -24,5 +24,8 @@ typedef void(^responseHandler )(id _Nullable response);
 -(void)storyLikeresponseMethod:(NSDictionary * _Nullable)param viewcontroller:(id _Nullable)view withHandler:(responseHandler _Nullable)handler;
 -(void)getallLikeresponseMethod:(NSDictionary * _Nullable)param viewcontroller:(id _Nonnull)view withHandler:(responseHandler _Nullable)handler;
 -(void)getuserGroupresponseMethod:(NSDictionary * _Nullable)param viewcontroller:(id _Nonnull)view withHandler:(responseHandler _Nullable)handler;
+-(void)getSearchCategoryMethod:(NSDictionary * _Nullable)param viewcontroller:(id _Nonnull)view withHandler:(responseHandler _Nullable)handler;
+-(void)searchTagPostMethod:(NSDictionary * _Nullable)param viewcontroller:(id _Nonnull)view withHandler:(responseHandler _Nullable)handler;
+
 
 @end

@@ -20,5 +20,6 @@
 @property(strong, nonatomic)NSDictionary *resultForStory;
 @property(strong, nonatomic)NSMutableArray *titlesForStory;
 @property(nonatomic, weak)id<IonHomeProfileContentCellDelegate>delegate;
+@property(strong, nonatomic)NSDictionary * resultCategoryList;
 
 @end

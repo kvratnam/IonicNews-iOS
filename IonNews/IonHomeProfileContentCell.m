@@ -50,9 +50,16 @@
         cell.title.text = [[[self.result objectAtIndex:indexPath.row] valueForKey:@"title"] uppercaseString];
         cell.subtitle.text = [[self.result objectAtIndex:indexPath.row] valueForKey:@"sub_title"];
     }else{
-        if ( self.resultForStory.count > 1) {
+//        NSLog(@"Story Result in Collection View: %@",self.resultForStory);
+        if ( self.resultForStory.count >= 1) {
+//             NSLog(@"Title For Story : %@",self.titlesForStory);
             url = [[[self.resultForStory valueForKey:[self.titlesForStory objectAtIndex:indexPath.row]] objectAtIndex:0] valueForKey:@"image"];
             webStringURL = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//            if ([url length]) {// Oct 12
+//
+//                webStringURL = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//
+//            }
             cell.title.text = [[self.titlesForStory objectAtIndex:indexPath.row] uppercaseString];
             cell.subtitle.text = [[[self.resultForStory valueForKey:[self.titlesForStory objectAtIndex:indexPath.row]] objectAtIndex:0] valueForKey:@"title"];
         }
@@ -92,7 +99,7 @@
     NSNumber * num = [[[self.resultForStory valueForKey:[self.titlesForStory objectAtIndex:indexPath.row]] objectAtIndex:0] objectForKey:@"category_id"];
     [self.delegate presentViewController:[num intValue] title:[self.titlesForStory objectAtIndex:indexPath.row]];
     }else{
-    [self.delegate presentViewController:0 title:[self.titlesForStory objectAtIndex:indexPath.row]];
+//    [self.delegate presentViewController:0 title:[self.titlesForStory objectAtIndex:indexPath.row]];// Oct 08
     }
     
 

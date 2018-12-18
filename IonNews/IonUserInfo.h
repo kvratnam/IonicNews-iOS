@@ -21,6 +21,7 @@
 @property(strong, nonatomic)NSString *role_id;
 @property(strong, nonatomic)NSString *profileImg;
 @property(strong, nonatomic)NSString *token;
+@property(strong, nonatomic)NSString *user_id;
 
 
 +(instancetype)modelObjectWithDictionary: (NSDictionary *)dict;

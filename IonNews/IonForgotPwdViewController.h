@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WaitSpinner.h>
 
 @protocol IonForgotPwdViewControllerDelegate <NSObject>
 -(void) nextButtonResponse;
 @end
 
-@interface IonForgotPwdViewController : UIViewController
+@interface IonForgotPwdViewController : UIViewController{
+    WaitSpinner *waitSpinner;
+}
 @property (weak, nonatomic) IBOutlet UITextField *emailTxtField;
 @property (nonatomic, weak) id <IonForgotPwdViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UILabel *forgotPwdMsg;

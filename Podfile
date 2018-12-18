@@ -5,6 +5,10 @@ target 'IonNews' do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
   pod 'Firebase/Core'
+  pod 'Fabric'
+  pod 'Crashlytics'
+  pod 'WaitSpinner'
+
   pod 'SDWebImage', '~> 4.0'
   # Pods for IonNews
 

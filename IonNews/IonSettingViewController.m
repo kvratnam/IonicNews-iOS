@@ -65,7 +65,7 @@
 
     cell.textLabel.text = title[indexPath.row];
     if (indexPath.row == 0) {
-      cell.detailTextLabel.text = @"App Version 1.0";
+      cell.detailTextLabel.text = @"App Version 1.1";
     }else{
     cell.detailTextLabel.text = @"";
     }

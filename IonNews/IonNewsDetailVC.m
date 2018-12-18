@@ -136,7 +136,11 @@
         [[requestHandler sharedInstance] storyListresponseMethod:nil viewcontroller:self category:self.category_id page:[[IonUtility sharedInstance] pageNumber] withHandler:^(id  _Nullable response) {
            page.category_id = self.category_id;
             updatedData = [response objectForKey:@"data"];
-            [[IonUtility sharedInstance] setNewsData:[[[IonUtility sharedInstance] newsData] arrayByAddingObjectsFromArray:updatedData]];
+          
+            if([updatedData isKindOfClass:[NSArray class]]){//December 04
+                [[IonUtility sharedInstance] setNewsData:[[[IonUtility sharedInstance] newsData] arrayByAddingObjectsFromArray:updatedData]];
+            }
+            
  
             
         }];

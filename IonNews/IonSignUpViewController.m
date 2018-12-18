@@ -28,6 +28,9 @@ CGFloat keyBoardSize;
     
     [super viewDidLoad];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillChangeFrameNotification object:nil];
+      self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    // Creating
+    waitSpinner = [[WaitSpinner alloc] init];
 
     [self.FirstNameTxtField designTextField];
     [self.LastNameTxtField designTextField];
@@ -124,7 +127,9 @@ CGFloat keyBoardSize;
         [self resignKeyboard];
         [[IonUtility sharedInstance] alertView:errMsg viewController:self];
     }else{
-        
+    
+        // Showing
+       [waitSpinner showInView:self.view.window];
        NSString *token =  [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceToken"];
         NSString *device_code;
         if (token) {
@@ -159,6 +164,7 @@ CGFloat keyBoardSize;
 //            };
         [[requestHandler sharedInstance] signUpresponseMethod:paramDict viewcontroller:self withHandler:^(id response) {
             dispatch_async(dispatch_get_main_queue(), ^{
+                [waitSpinner hide];
                 [self resignKeyboard];
                 [[NSUserDefaults standardUserDefaults] setObject:response forKey:@"user_detail"];
                 [[NSUserDefaults standardUserDefaults] setObject:[response objectForKey:@"token"] forKey:@"AUTH_KEY"];
@@ -227,6 +233,20 @@ CGFloat keyBoardSize;
     [self.PasswordTxtField resignFirstResponder];
     [self.designTxtField resignFirstResponder];
 
+}
+
+
+- (void) yourMainFunction {
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    
+    [NSThread detachNewThreadSelector:@selector(threadStartAnimating) toTarget:self withObject:nil];
+    
+    [self.activityIndicator stopAnimating];
+    
+}
+
+- (void) threadStartAnimating {
+    [self.activityIndicator startAnimating];
 }
 
 @end

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A303FB641EC44A4900702C2C /* IonMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A303FB631EC44A4900702C2C /* IonMenuViewController.m */; };
 		A303FB6A1EC467DD00702C2C /* IonAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A303FB691EC467DC00702C2C /* IonAnimation.m */; };
-		A30CBE651EAA04E600D2140A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A30CBE641EAA04E600D2140A /* GoogleService-Info.plist */; };
 		A30CBE681EAA09BD00D2140A /* UITextField+addition.m in Sources */ = {isa = PBXBuildFile; fileRef = A30CBE671EAA09BD00D2140A /* UITextField+addition.m */; };
 		A30CBE6B1EAA100A00D2140A /* IonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A30CBE6A1EAA100A00D2140A /* IonUtility.m */; };
 		A31A09F81EA628B900291F70 /* ApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A31A09F71EA628B900291F70 /* ApiRequest.m */; };
@@ -62,6 +61,9 @@
 		A3FB9C6F1F3861AA00E3FBCE /* SourceSerifPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A3FB9C691F3861AA00E3FBCE /* SourceSerifPro-Regular.ttf */; };
 		A824B696BB90C4BD39483BC3 /* libPods-IonNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1032FFDF9B9231CD01924 /* libPods-IonNews.a */; };
 		F50F7A328C179F2DDD61AF4B /* libPods-IonNewsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9EE282A49E07BA127B4814C /* libPods-IonNewsTests.a */; };
+		FD1490F3218B739F00912C14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD1490F2218B739F00912C14 /* GoogleService-Info.plist */; };
+		FD1D6CA62164776500305EE5 /* IonSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1D6CA52164776500305EE5 /* IonSearchTableViewCell.m */; };
+		FD2146CF215C992000E914A5 /* IonSearchContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2146CE215C992000E914A5 /* IonSearchContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +85,6 @@
 		A303FB631EC44A4900702C2C /* IonMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonMenuViewController.m; sourceTree = "<group>"; };
 		A303FB681EC467DC00702C2C /* IonAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonAnimation.h; sourceTree = "<group>"; };
 		A303FB691EC467DC00702C2C /* IonAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IonAnimation.m; sourceTree = "<group>"; };
-		A30CBE641EAA04E600D2140A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A30CBE661EAA09BD00D2140A /* UITextField+addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+addition.h"; sourceTree = "<group>"; };
 		A30CBE671EAA09BD00D2140A /* UITextField+addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+addition.m"; sourceTree = "<group>"; };
 		A30CBE691EAA100A00D2140A /* IonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IonUtility.h; sourceTree = "<group>"; };
@@ -181,6 +182,11 @@
 		A3FB9C691F3861AA00E3FBCE /* SourceSerifPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSerifPro-Regular.ttf"; sourceTree = "<group>"; };
 		B7F1032FFDF9B9231CD01924 /* libPods-IonNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IonNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9EE282A49E07BA127B4814C /* libPods-IonNewsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IonNewsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD1490F2218B739F00912C14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FD1D6CA42164776500305EE5 /* IonSearchTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IonSearchTableViewCell.h; sourceTree = "<group>"; };
+		FD1D6CA52164776500305EE5 /* IonSearchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IonSearchTableViewCell.m; sourceTree = "<group>"; };
+		FD2146CD215C992000E914A5 /* IonSearchContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IonSearchContentViewController.h; sourceTree = "<group>"; };
+		FD2146CE215C992000E914A5 /* IonSearchContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IonSearchContentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +270,8 @@
 				A39292561EB3781E00AFE063 /* IonHomeProfileViewController.m */,
 				A37F04D41E9619D500968B77 /* IonHomeContentViewController.h */,
 				A37F04D51E9619D500968B77 /* IonHomeContentViewController.m */,
+				FD2146CD215C992000E914A5 /* IonSearchContentViewController.h */,
+				FD2146CE215C992000E914A5 /* IonSearchContentViewController.m */,
 			);
 			name = IonHomeView;
 			sourceTree = "<group>";
@@ -373,7 +381,7 @@
 				A3A0346A1E8E5BD500E47060 /* Assets.xcassets */,
 				A3A0346C1E8E5BD500E47060 /* LaunchScreen.storyboard */,
 				A3A0346F1E8E5BD500E47060 /* Info.plist */,
-				A30CBE641EAA04E600D2140A /* GoogleService-Info.plist */,
+				FD1490F2218B739F00912C14 /* GoogleService-Info.plist */,
 				A3A0345E1E8E5BD500E47060 /* Supporting Files */,
 			);
 			path = IonNews;
@@ -421,6 +429,8 @@
 				A392925C1EB5232100AFE063 /* IonHomeProfileContentCell.m */,
 				A392925E1EB5F1E800AFE063 /* IonHomeProfileCollectionCell.h */,
 				A392925F1EB5F1E800AFE063 /* IonHomeProfileCollectionCell.m */,
+				FD1D6CA42164776500305EE5 /* IonSearchTableViewCell.h */,
+				FD1D6CA52164776500305EE5 /* IonSearchTableViewCell.m */,
 				A3F3665C1EB89BF100A3B18B /* IonHomeHeaderView.xib */,
 				A3F366591EB89BD600A3B18B /* IonProfileHeaderView.h */,
 				A3F3665A1EB89BD600A3B18B /* IonProfileHeaderView.m */,
@@ -473,6 +483,7 @@
 				A3A034591E8E5BD500E47060 /* Resources */,
 				072B910207100804B1647C3E /* [CP] Embed Pods Frameworks */,
 				0BDD482AA27DA0D4F120048A /* [CP] Copy Pods Resources */,
+				FD1490F1218B6A2A00912C14 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -515,8 +526,8 @@
 				TargetAttributes = {
 					A3A0345A1E8E5BD500E47060 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = D7234GJ94F;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 4UF2278HRR;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -525,8 +536,8 @@
 					};
 					A3A034731E8E5BD500E47060 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = F3M7622L6E;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 4UF2278HRR;
+						ProvisioningStyle = Manual;
 						TestTargetID = A3A0345A1E8E5BD500E47060;
 					};
 				};
@@ -557,10 +568,10 @@
 			files = (
 				A3A0346E1E8E5BD500E47060 /* LaunchScreen.storyboard in Resources */,
 				A3FB9C6C1F3861AA00E3FBCE /* OpenSans-Bold.ttf in Resources */,
-				A30CBE651EAA04E600D2140A /* GoogleService-Info.plist in Resources */,
 				A3FB9C6B1F3861AA00E3FBCE /* ChronicaPro-Medium.ttf in Resources */,
 				A3A0346B1E8E5BD500E47060 /* Assets.xcassets in Resources */,
 				A3FB9C6D1F3861AA00E3FBCE /* OpenSans-Regular.ttf in Resources */,
+				FD1490F3218B739F00912C14 /* GoogleService-Info.plist in Resources */,
 				A32AE44E1EB22367003EE2A9 /* Default-568h@2x.png in Resources */,
 				A3F3665D1EB89BF100A3B18B /* IonHomeHeaderView.xib in Resources */,
 				A3FB9C6E1F3861AA00E3FBCE /* SourceSerifPro-Bold.ttf in Resources */,
@@ -676,6 +687,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FD1490F1218B6A2A00912C14 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -685,6 +709,7 @@
 			files = (
 				A3D908B51EA76E47005DED95 /* Reachability.m in Sources */,
 				A37F04FF1E97669B00968B77 /* MPFlipTransition.m in Sources */,
+				FD2146CF215C992000E914A5 /* IonSearchContentViewController.m in Sources */,
 				A3EB72121E9CC182000E88D3 /* IonForgotPwdViewController.m in Sources */,
 				A303FB6A1EC467DD00702C2C /* IonAnimation.m in Sources */,
 				A31A09F81EA628B900291F70 /* ApiRequest.m in Sources */,
@@ -719,6 +744,7 @@
 				A37F04E81E96725600968B77 /* IonNewsDetailViewController.m in Sources */,
 				A37F05021E9766AA00968B77 /* MPFlipViewController.m in Sources */,
 				A3A84A2E1EC5954E0016F72B /* IonDismissalAnimation.m in Sources */,
+				FD1D6CA62164776500305EE5 /* IonSearchTableViewCell.m in Sources */,
 				A3D908BB1EA77DFD005DED95 /* IonUserInfo.m in Sources */,
 				A3E5280F1E9F6C3F00CBE55C /* IonWebViewController.m in Sources */,
 				A392925A1EB5228500AFE063 /* IonHomeProfileDetailCell.m in Sources */,
@@ -784,7 +810,9 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Appal Chintapalli (4UF2278HRR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appal Chintapalli (4UF2278HRR)";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -832,7 +860,9 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Appal Chintapalli (4UF2278HRR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appal Chintapalli (4UF2278HRR)";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -859,13 +889,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = IonNews/IonNews.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = D7234GJ94F;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Appal Chintapalli (4UF2278HRR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appal Chintapalli (4UF2278HRR)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4UF2278HRR;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = IonNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.IonNews.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mantraLabs.IonNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5bd141b1-e7d8-48b5-b332-d396f15dc0b6";
+				PROVISIONING_PROFILE_SPECIFIER = IONNewsDistribution;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -875,13 +911,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = IonNews/IonNews.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = D7234GJ94F;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Appal Chintapalli (4UF2278HRR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appal Chintapalli (4UF2278HRR)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4UF2278HRR;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = IonNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.IonNews.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mantraLabs.IonNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5bd141b1-e7d8-48b5-b332-d396f15dc0b6";
+				PROVISIONING_PROFILE_SPECIFIER = IONNewsDistribution;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -890,7 +932,9 @@
 			baseConfigurationReference = 795AFBB83A37D64F899CA461 /* Pods-IonNewsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = F3M7622L6E;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Appal Chintapalli (4UF2278HRR)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4UF2278HRR;
 				INFOPLIST_FILE = IonNewsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.IonNews.app;
@@ -904,7 +948,9 @@
 			baseConfigurationReference = 97E9A12452CA3344513CB137 /* Pods-IonNewsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = F3M7622L6E;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Appal Chintapalli (4UF2278HRR)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4UF2278HRR;
 				INFOPLIST_FILE = IonNewsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.IonNews.app;

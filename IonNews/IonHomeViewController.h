@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Ionconstant.h"
+#import <WaitSpinner.h>
 
 @interface IonHomeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UITabBar *HomeTabbar;
 @property (nonatomic, strong) UIImageView * logo;
+@property (weak, nonatomic) IBOutlet UITabBarItem *HomeTab;
+@property (weak, nonatomic) IBOutlet UITabBarItem *ListTab;
+@property (weak, nonatomic) IBOutlet UITabBarItem *SearchTab;
+@property (weak, nonatomic) IBOutlet UITabBarItem *ProfileTab;
+@property (weak, nonatomic) IBOutlet UITabBarItem *SttingsTab;
 @end

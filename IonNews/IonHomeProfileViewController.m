@@ -22,6 +22,8 @@
     CGPoint lastContentOffset;
     Reachability *reachability;
     NetworkStatus internetStatus;
+    NSMutableDictionary *ArrangeDict;
+    NSMutableArray * titles;
 }
 
 - (void)viewDidLoad {
@@ -31,6 +33,8 @@
     self.heightForHeaderConstant.constant = 125;
     self.profileImgButton.layer.cornerRadius = self.profileImgButton.frame.size.width/2;
     self.profileImgButton.clipsToBounds = YES;
+    ArrangeDict = [[ NSMutableDictionary alloc] init];
+    titles = [[NSMutableArray alloc] init];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(apiCall) name:@"updateProfileView" object:nil];
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"updateProfileImg"] && ![[[NSUserDefaults standardUserDefaults] objectForKey:@"updateProfileImg"] isEqualToString:@""]) {
@@ -77,9 +81,22 @@
         [[requestHandler sharedInstance] homePageStoryresponseMethod:nil viewcontroller:self withHandler:^(id  _Nullable response) {
             self.resultForStory = response;
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.titleForStory = [self.resultForStory allKeys].mutableCopy;;
+                self.titleForStory = [self.resultForStory allKeys].mutableCopy;
+                titles = [self.resultForStory allKeys].mutableCopy;
+                for (int i=0; i< titles.count ; i++) {
+                    [ArrangeDict setValue:[titles objectAtIndex:i] forKey:[[[self.resultForStory valueForKey:[titles objectAtIndex:i]] objectAtIndex:0] valueForKey:@"id"]];
+//                    NSArray *SortedKeys = [ArrangeDict keysSortedByValueUsingSelector:@selector(compare:)]; // Oct 26
+                    NSArray *sortedKeys = [[ArrangeDict allKeys] sortedArrayUsingSelector: @selector(compare:)];
+                    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO selector:@selector(compare:)];
+                    NSArray* sortedArray = [sortedKeys sortedArrayUsingDescriptors:@[sortDescriptor]];
+                    NSLog(@"Home Profile VC: %@",sortedArray);
+                    
+                    
+                    [self.titleForStory removeAllObjects];
+                    for (NSString *key in sortedArray)
+                        [self.titleForStory addObject: [ArrangeDict objectForKey: key]];
+                }
                 [self animateTableView:self.tableView];
-                
                 
             });
         }];

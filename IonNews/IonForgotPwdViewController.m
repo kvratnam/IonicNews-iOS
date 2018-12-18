@@ -21,6 +21,9 @@
     [self.emailTxtField designTextField];
     self.emailTxtField.keyboardType = UIKeyboardTypeEmailAddress;
     // Do any additional setup after loading the view.
+    // Creating
+    waitSpinner = [[WaitSpinner alloc] init];
+
 }
 
 #pragma mark - methods
@@ -51,6 +54,8 @@
         [self.emailTxtField resignFirstResponder];
         [[IonUtility sharedInstance] alertView:errMsg viewController:self];
     }else{
+        // Showing
+        [waitSpinner showInView:self.view.window];
         
         NSDictionary * paramDict = @{
                                      @"email" : self.emailTxtField.text
@@ -59,6 +64,8 @@
         [[requestHandler sharedInstance] forgotresponseMethod:paramDict viewcontroller:self withHandler:^(id response) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.emailTxtField resignFirstResponder];
+                // Hiding
+                [waitSpinner hide]; 
                 [[IonUtility sharedInstance] alertView:[response objectForKey:@"message"] viewController:self];
                 [self.delegate nextButtonResponse];
                 self.emailTxtField.hidden = YES;

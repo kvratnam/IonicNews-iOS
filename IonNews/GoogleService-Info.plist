@@ -7,34 +7,34 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>799656804351-lbclnapes6vr44opm444uov1gg16mbi3.apps.googleusercontent.com</string>
+	<string>190375367679-g7kaolr2ujq4mqg1e62940k71nou62mk.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.799656804351-lbclnapes6vr44opm444uov1gg16mbi3</string>
+	<string>com.googleusercontent.apps.190375367679-g7kaolr2ujq4mqg1e62940k71nou62mk</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAKynTO7Zpy5FNmx9Uu-n9GG7FG9HszylA</string>
+	<string>AIzaSyCwnSibAtpoDIs3s_onDlRBVRMypEWqR4k</string>
 	<key>GCM_SENDER_ID</key>
-	<string>799656804351</string>
+	<string>190375367679</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.IonNews.app</string>
+	<string>com.mantraLabs.IonNews</string>
 	<key>PROJECT_ID</key>
-	<string>ionnews-481a8</string>
+	<string>ionnews-4e6e9</string>
 	<key>STORAGE_BUCKET</key>
-	<string>ionnews-481a8.appspot.com</string>
+	<string>ionnews-4e6e9.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:799656804351:ios:e627738ec4cb4fc4</string>
+	<string>1:190375367679:ios:69a97ce04dc77b3c</string>
 	<key>DATABASE_URL</key>
-	<string>https://ionnews-481a8.firebaseio.com</string>
+	<string>https://ionnews-4e6e9.firebaseio.com</string>
 </dict>
 </plist>

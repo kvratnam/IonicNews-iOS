@@ -8,11 +8,13 @@
 
 #import "AppDelegate.h"
 #import "Ionconstant.h"
+#import <Crashlytics/Crashlytics.h>
 
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 
 @import Firebase;
+@import Fabric;
 
 
 @interface AppDelegate ()
@@ -30,7 +32,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [FIRApp configure];
+    [Fabric with:@[[Crashlytics class]]];
+    [Fabric.sharedSDK setDebug:YES];
     [self registerForRemoteNotifications];
+//    [[Crashlytics sharedInstance] crash];
+
     
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -48,7 +54,7 @@
     // [self updateInterfaceWithReachability:self.internetReachability];
     [self checkIfInternetExists];
     
-    
+    NSLog(@"Authenticatio key : %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"AUTH_KEY"]);
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"AUTH_KEY"] != nil) {
         // Show the dashboard

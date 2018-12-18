@@ -21,6 +21,8 @@ NSString *const KStoryListUrl = @"story/list?category_id=";
 NSString *const KGetAllStoryLikeUrl = @"story/getAllLikeStory";
 NSString *const KStoryLikeUrl = @"story/story_like";
 NSString *const KuserGroupsUrl = @"category/user_group";
+NSString *const KcategoryListUrl = @"search/categoryAndTaglist";
+NSString *const KTagListUrl = @"search/storyByTag";
 
 @implementation requestHandler
 
@@ -214,6 +216,36 @@ NSString *const KuserGroupsUrl = @"category/user_group";
         
     }];
 
+}
+
+-(void)getSearchCategoryMethod:(NSDictionary * _Nullable)param viewcontroller:(id _Nonnull)view withHandler:(responseHandler _Nullable)handler{
+    
+    [[ApiRequest sharedInstance] getRequest:KcategoryListUrl param:param withHandler:^(id data, NSError *serverError, NSURLResponse *headerresponse) {
+        
+        id response = [self errorHandler:data serverError:serverError headerResponse:headerresponse viewController:view];
+        if (response != nil) {
+            handler(response);
+        }else{
+            handler(nil);
+        }
+        
+    }];
+    
+}
+
+-(void)searchTagPostMethod:(NSDictionary * _Nullable)param viewcontroller:(id _Nonnull)view withHandler:(responseHandler _Nullable)handler{
+    
+    [[ApiRequest sharedInstance] postRequest:KTagListUrl param:param withHandler:^(id data, NSError *serverError, NSURLResponse *headerresponse) {
+        
+        id response = [self errorHandler:data serverError:serverError headerResponse:headerresponse viewController:view];
+        if (response != nil) {
+            handler(response);
+        }else{
+            handler(nil);
+        }
+        
+    }];
+    
 }
 
 
