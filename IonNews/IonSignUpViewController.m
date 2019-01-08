@@ -9,22 +9,17 @@
 #import "IonSignUpViewController.h"
 #import "Ionconstant.h"
 
-@interface IonSignUpViewController ()<UIScrollViewDelegate, UITextFieldDelegate>
+@interface IonSignUpViewController ()<UIScrollViewDelegate, UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UINavigationControllerDelegate>
 
 @end
 
 @implementation IonSignUpViewController{
-CGFloat keyBoardSize;
+    CGFloat keyBoardSize;
     NSString *role_id;
-// NSArray *pickerArray;
+    NSArray *pickerArray;
 }
 
 - (void)viewDidLoad {
-//    pickerArray  =[[NSArray alloc] init];
-//    
-//    [[requestHandler sharedInstance]getuserGroupresponseMethod:nil viewcontroller:self withHandler:^(id  _Nullable response) {
-//        pickerArray = response;
-//    }];
     
     [super viewDidLoad];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillChangeFrameNotification object:nil];
@@ -39,6 +34,25 @@ CGFloat keyBoardSize;
     [self.PasswordTxtField designTextField];
     [self.orgTxtField designTextField];
     [self.designTxtField designTextField];
+    [self.rollTxtField designTextField];
+    
+    self.rolepicker = [[UIPickerView alloc] init];
+    self.rolepicker.delegate = self;
+    self.rolepicker.dataSource = self;
+    self.rolepicker.showsSelectionIndicator = YES;
+    self.rollTxtField.inputView = self.rolepicker;
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Done" style:UIBarButtonItemStyleDone
+                                   target:self action:@selector(done:)];
+    UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:
+                          CGRectMake(0, self.view.frame.size.height-
+                                     self.rolepicker.frame.size.height-50, self.view.frame.size.width, 50)];
+    [toolBar setBarStyle:UIBarStyleBlackOpaque];
+    NSArray *toolbarItems = [NSArray arrayWithObjects:
+                             doneButton, nil];
+    [toolBar setItems:toolbarItems];
+    
+    self.signupBtn.layer.cornerRadius = 20.0;
     
 //    self.rolepicker = [[UIPickerView alloc] init];
 //    self.rolepicker.delegate = self;
@@ -58,17 +72,52 @@ CGFloat keyBoardSize;
 
 }
 
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    pickerArray  =[[NSArray alloc] init];
+    
+    [[requestHandler sharedInstance]getuserGroupresponseMethod:nil viewcontroller:self withHandler:^(id  _Nullable response) {
+        pickerArray = response;
+    }];
+}
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     if (textField == self.PasswordTxtField) {
         self.PasswordTxtField.secureTextEntry = true;
+        self.passwordPlaceHolder.hidden = NO;
     }else if (textField == self.EmailTxtField){
         self.EmailTxtField.keyboardType = UIKeyboardTypeEmailAddress;
+        self.emailPlaceHolder.hidden = NO;
     }else if (textField == self.PhoneTxtField){
         self.PhoneTxtField.keyboardType = UIKeyboardTypePhonePad;
+        self.phonePlaceHolder.hidden = NO;
+    }else if (textField ==self.FirstNameTxtField){
+        self.firstNamePlaceHolder.hidden = NO;
+    }else if (textField ==self.LastNameTxtField){
+        self.lastNamePlaceHolder.hidden = NO;
     }else if (textField ==self.designTxtField){
-    
+        self.designationPlaceHolder.hidden = NO;
+    }else if (textField ==self.orgTxtField){
+        self.orgPlaceHolder.hidden = NO;
+    }else if (textField ==self.rollTxtField){
+        self.rollPlaceHolder.hidden = NO;
     }
     
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if (textField == self.EmailTxtField) {
+        [self.scrollView setContentOffset:CGPointMake(0, 100)];
+    }else if (textField == self.PasswordTxtField) {
+        [self.scrollView setContentOffset:CGPointMake(0, 120)];
+    }else if (textField == self.orgTxtField){
+           [self.scrollView setContentOffset:CGPointMake(0, 180)];
+    }else if (textField == self.designTxtField){
+           [self.scrollView setContentOffset:CGPointMake(0, 240)];
+    }else if (textField == self.rollTxtField){
+           [self.scrollView setContentOffset:CGPointMake(0, 280)];
+    }
+    return YES;
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -80,7 +129,48 @@ CGFloat keyBoardSize;
         NSUInteger newLength = [self.PhoneTxtField.text length] + [string length] - range.length;
         return (newLength > 10) ? NO : YES;
     }
+    
+//    if (self.FirstNameTxtField.text.length == 0) {
+//        self.firstNamePlaceHolder.hidden = YES;
+//    }
+//    
+//    if (self.LastNameTxtField.text.length == 0) {
+//        self.lastNamePlaceHolder.hidden = YES;
+//    }
+//    
+//    if (self.PhoneTxtField.text.length == 0) {
+//        self.phonePlaceHolder.hidden = YES;
+//    }
+//    
+//    if (self.EmailTxtField.text.length == 0) {
+//        self.emailPlaceHolder.hidden = YES;
+//    }
+//    if (self.PasswordTxtField.text.length == 0) {
+//        self.passwordPlaceHolder.hidden = YES;
+//    }
+//    
+//    if (self.orgTxtField.text.length == 0) {
+//        self.orgPlaceHolder.hidden = YES;
+//    }
+//    
+//    if (self.designTxtField.text.length == 0) {
+//        self.designationPlaceHolder.hidden = YES;
+//    }
+//    
+//    if (self.rollTxtField.text.length == 0) {
+//        self.rollPlaceHolder.hidden = YES;
+//    }
     return YES;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    
+    [self.scrollView setContentOffset:CGPointMake(0, 0)];
+    
+    return NO;
+
 }
 
 
@@ -248,5 +338,30 @@ CGFloat keyBoardSize;
 - (void) threadStartAnimating {
     [self.activityIndicator startAnimating];
 }
+
+
+#pragma mark - Picker View Data source
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+-(NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component{
+    return [pickerArray count];
+}
+
+#pragma mark- Picker View Delegate
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:
+(NSInteger)row inComponent:(NSInteger)component{
+    [self.rollTxtField setText:[[pickerArray objectAtIndex:row] valueForKey:@"slug"]];
+    role_id = [[pickerArray objectAtIndex:row] valueForKey:@"id"];
+}
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:
+(NSInteger)row forComponent:(NSInteger)component{
+    return [[pickerArray objectAtIndex:row] valueForKey:@"slug"];
+}
+
+
+
 
 @end

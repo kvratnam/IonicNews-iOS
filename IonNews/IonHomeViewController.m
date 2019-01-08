@@ -29,6 +29,8 @@
     [super viewWillAppear:YES];
 //    [self.HomeTab setEnabled:YES];
 //    [self.HomeTabbar.items[0] setEnabled:YES];
+    self.companyLogo.layer.cornerRadius = 10.0;
+    self.companyLogo.layer.masksToBounds = YES;
 
     if (self.scrollView.contentOffset.x == 0) {
         [self.HomeTabbar setSelectedItem:self.HomeTab];
@@ -119,77 +121,81 @@
 
 #pragma mark - scroll view delegate
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
-    if (scrollView == self.scrollView) {
-    CGPoint currentOffset = self.scrollView.contentOffset;
-    CGFloat x,y,width,height;
-    
-    if (currentOffset.x > lastContentOffset.x && currentOffset.x <= self.view.frame.size.width)
-    {
-        x = (self.view.frame.size.width - 50)-((self.view.frame.size.width -200)-self.scrollView.contentOffset.x)/4 ;
-        y = (self.view.frame.size.width - self.scrollView.contentOffset.x)/8;
-        width = 30 - (((self.view.frame.size.width -200)-self.scrollView.contentOffset.x)/4);
-        height = 30 - (((self.view.frame.size.width -200)-self.scrollView.contentOffset.x)/4);
-        
-        self.logo.frame = CGRectMake(x, y, width, height);
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//
+//    if (scrollView == self.scrollView) {
+//    CGPoint currentOffset = self.scrollView.contentOffset;
+//    CGFloat x,y,width,height;
+//
+//    if (currentOffset.x > lastContentOffset.x && currentOffset.x <= self.view.frame.size.width)
+//    {
+//        x = (self.view.frame.size.width - 50)-((self.view.frame.size.width -200)-self.scrollView.contentOffset.x)/4 ;
+//        y = (self.view.frame.size.width - self.scrollView.contentOffset.x)/8;
+//        width = 30 - (((self.view.frame.size.width -200)-self.scrollView.contentOffset.x)/4);
+//        height = 30 - (((self.view.frame.size.width -200)-self.scrollView.contentOffset.x)/4);
+//
+//        self.logo.frame = CGRectMake(x, y, width, height);
+//
+//
+//        lastContentOffset = currentOffset;
+//
+//                NSLog(@"current off set here Upward %f %f %f", scrollView.contentOffset.x, y, ((self.view.frame.size.width -200)-scrollView.contentOffset.x)/2);
+//
+//        // Upward
+//
+//    }
+//    else if (currentOffset.x >= self.view.frame.size.width-200 && currentOffset.x <= self.view.frame.size.width ) {
+//
+//
+//        y = -(self.scrollView.contentOffset.x - self.view.frame.size.width)/8;
+//        width = 80 - (self.view.frame.size.width-self.scrollView.contentOffset.x)/4;
+//        x = self.view.frame.size.width - (self.view.frame.size.width-self.scrollView.contentOffset.x)/4;
+//        height = 80 - (self.view.frame.size.width-self.scrollView.contentOffset.x)/4;
+//        self.logo.frame = CGRectMake(x - 12, y-5, width, height);
+//               lastContentOffset = currentOffset;
+//
+//        NSLog(@"current off set here Downward %f %f %f", scrollView.contentOffset.x ,y,x);
+//        // Downward
+//    }
+//}
+//
+//
+//}
 
-        
-        lastContentOffset = currentOffset;
-        
-                NSLog(@"current off set here Upward %f %f %f", scrollView.contentOffset.x, y, ((self.view.frame.size.width -200)-scrollView.contentOffset.x)/2);
-        
-        // Upward
-        
-    }
-    else if (currentOffset.x >= self.view.frame.size.width-200 && currentOffset.x <= self.view.frame.size.width ) {
-        
-        
-        y = -(self.scrollView.contentOffset.x - self.view.frame.size.width)/8;
-        width = 80 - (self.view.frame.size.width-self.scrollView.contentOffset.x)/4;
-        x = self.view.frame.size.width - (self.view.frame.size.width-self.scrollView.contentOffset.x)/4;
-        height = 80 - (self.view.frame.size.width-self.scrollView.contentOffset.x)/4;
-        self.logo.frame = CGRectMake(x - 12, y-5, width, height);
-               lastContentOffset = currentOffset;
 
-        NSLog(@"current off set here Downward %f %f %f", scrollView.contentOffset.x ,y,x);
-        // Downward
-    }
-}
-
-    
-}
-
-
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    
-    if (scrollView == self.scrollView) {
-    
-    CGPoint currentOffset = self.scrollView.contentOffset;
-    CGPoint endingContentOffset;
-    if (currentOffset.x > endingContentOffset.x && self.scrollView.contentOffset.x>= self.view.frame.size.width)
-    {
-        self.logo.frame = CGRectMake(self.view.frame.size.width, 0, 80, 80);
-     endingContentOffset = currentOffset;
-    }else{
-        self.logo.frame = CGRectMake(self.view.frame.size.width - 62, 20, 30, 30);
-     endingContentOffset = currentOffset;
-    }
-    
-        if (self.scrollView.contentOffset.x == 0) {
-            [self.HomeTabbar setSelectedItem:self.HomeTab];
-        }else if (self.scrollView.contentOffset.x == self.view.frame.size.width) {
-            [self.HomeTabbar setSelectedItem:self.ListTab];
-        }else if (self.scrollView.contentOffset.x == self.view.frame.size.width*2) {
-            [self.HomeTabbar setSelectedItem:self.SearchTab];
-        }else if (self.scrollView.contentOffset.x == self.view.frame.size.width*3) {
-            [self.HomeTabbar setSelectedItem:self.ProfileTab];
-        }else if (self.scrollView.contentOffset.x == self.view.frame.size.width*4) {
-            [self.HomeTabbar setSelectedItem:self.SttingsTab];
-        }
-        
-    }
-}
+//-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+//
+//    if (scrollView == self.scrollView) {
+//
+//    CGPoint currentOffset = self.scrollView.contentOffset;
+//    CGPoint endingContentOffset;
+//    if (currentOffset.x > endingContentOffset.x && self.scrollView.contentOffset.x>= self.view.frame.size.width)
+//    {
+//        self.logo.frame = CGRectMake(self.view.frame.size.width, 0, 80, 80);
+//     endingContentOffset = currentOffset;
+//    }else{
+//        self.logo.frame = CGRectMake(self.view.frame.size.width - 62, 20, 30, 30);
+//     endingContentOffset = currentOffset;
+//    }
+//
+//        if (self.scrollView.contentOffset.x == 0) {
+//            [self.HomeTabbar setSelectedItem:self.HomeTab];
+//        }else if (self.scrollView.contentOffset.x == self.view.frame.size.width) {
+//            [self.HomeTabbar setSelectedItem:self.ListTab];
+//        }else if (self.scrollView.contentOffset.x == self.view.frame.size.width*2) {
+//            [self.HomeTabbar setSelectedItem:self.SearchTab];
+//        }else if (self.scrollView.contentOffset.x == self.view.frame.size.width*3) {
+//            [self.HomeTabbar setSelectedItem:self.ProfileTab];
+//        }else if (self.scrollView.contentOffset.x == self.view.frame.size.width*4) {
+//            [self.HomeTabbar setSelectedItem:self.SttingsTab];
+//        }
+//
+//    }
+//}
+//
+//- (void)scrollViewDidScroll:(UIScrollView *)sender {
+//    sender.contentOffset.x = 0
+//}
 
 
 #pragma mark - custom delegate and methods
@@ -231,7 +237,7 @@
         
     }else if (item.tag == 2){
         
-        [self.scrollView setContentOffset:CGPointMake(self.view.frame.size.width * 2, 0) animated:YES];
+//        [self.scrollView setContentOffset:CGPointMake(self.view.frame.size.width * 2, 0) animated:YES];
         
     }else if (item.tag == 3){
         

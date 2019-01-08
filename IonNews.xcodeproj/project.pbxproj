@@ -62,8 +62,10 @@
 		A824B696BB90C4BD39483BC3 /* libPods-IonNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1032FFDF9B9231CD01924 /* libPods-IonNews.a */; };
 		F50F7A328C179F2DDD61AF4B /* libPods-IonNewsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9EE282A49E07BA127B4814C /* libPods-IonNewsTests.a */; };
 		FD1490F3218B739F00912C14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD1490F2218B739F00912C14 /* GoogleService-Info.plist */; };
+		FD14F54921CAD9DF0068476C /* iONHomeContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD14F54821CAD9DF0068476C /* iONHomeContentTableViewCell.m */; };
 		FD1D6CA62164776500305EE5 /* IonSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1D6CA52164776500305EE5 /* IonSearchTableViewCell.m */; };
 		FD2146CF215C992000E914A5 /* IonSearchContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2146CE215C992000E914A5 /* IonSearchContentViewController.m */; };
+		FD2CD4F321DBC5F4000EBAE0 /* iONCategoryListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2CD4F221DBC5F4000EBAE0 /* iONCategoryListTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,10 +185,14 @@
 		B7F1032FFDF9B9231CD01924 /* libPods-IonNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IonNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9EE282A49E07BA127B4814C /* libPods-IonNewsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IonNewsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD1490F2218B739F00912C14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FD14F54721CAD9DF0068476C /* iONHomeContentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iONHomeContentTableViewCell.h; sourceTree = "<group>"; };
+		FD14F54821CAD9DF0068476C /* iONHomeContentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iONHomeContentTableViewCell.m; sourceTree = "<group>"; };
 		FD1D6CA42164776500305EE5 /* IonSearchTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IonSearchTableViewCell.h; sourceTree = "<group>"; };
 		FD1D6CA52164776500305EE5 /* IonSearchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IonSearchTableViewCell.m; sourceTree = "<group>"; };
 		FD2146CD215C992000E914A5 /* IonSearchContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IonSearchContentViewController.h; sourceTree = "<group>"; };
 		FD2146CE215C992000E914A5 /* IonSearchContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IonSearchContentViewController.m; sourceTree = "<group>"; };
+		FD2CD4F121DBC5F4000EBAE0 /* iONCategoryListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iONCategoryListTableViewCell.h; sourceTree = "<group>"; };
+		FD2CD4F221DBC5F4000EBAE0 /* iONCategoryListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iONCategoryListTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -434,6 +440,10 @@
 				A3F3665C1EB89BF100A3B18B /* IonHomeHeaderView.xib */,
 				A3F366591EB89BD600A3B18B /* IonProfileHeaderView.h */,
 				A3F3665A1EB89BD600A3B18B /* IonProfileHeaderView.m */,
+				FD14F54721CAD9DF0068476C /* iONHomeContentTableViewCell.h */,
+				FD14F54821CAD9DF0068476C /* iONHomeContentTableViewCell.m */,
+				FD2CD4F121DBC5F4000EBAE0 /* iONCategoryListTableViewCell.h */,
+				FD2CD4F221DBC5F4000EBAE0 /* iONCategoryListTableViewCell.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -724,6 +734,7 @@
 				A303FB641EC44A4900702C2C /* IonMenuViewController.m in Sources */,
 				A37F05051E9768FD00968B77 /* IonNewsDetailVC.m in Sources */,
 				A3A84A311EC605C80016F72B /* menuTableViewCell.m in Sources */,
+				FD2CD4F321DBC5F4000EBAE0 /* iONCategoryListTableViewCell.m in Sources */,
 				A3F3665B1EB89BD600A3B18B /* IonProfileHeaderView.m in Sources */,
 				A37F04F61E967C4700968B77 /* MPAnimation.m in Sources */,
 				A30CBE681EAA09BD00D2140A /* UITextField+addition.m in Sources */,
@@ -739,6 +750,7 @@
 				A354B4621E9B737C00ACC9F1 /* IonProfileViewController.m in Sources */,
 				A3A034601E8E5BD500E47060 /* main.m in Sources */,
 				A37F04E31E96457F00968B77 /* IonNewsTitleCollectionViewCell.m in Sources */,
+				FD14F54921CAD9DF0068476C /* iONHomeContentTableViewCell.m in Sources */,
 				A3A034881E8E5EDC00E47060 /* IonWelcomeViewController.m in Sources */,
 				A3CE99A21EA75D1D008AEEFC /* requestHandler.m in Sources */,
 				A37F04E81E96725600968B77 /* IonNewsDetailViewController.m in Sources */,
@@ -888,6 +900,7 @@
 			baseConfigurationReference = 862C0FC6A7FE6582AD838139 /* Pods-IonNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = IonNews/IonNews.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appal Chintapalli (4UF2278HRR)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appal Chintapalli (4UF2278HRR)";
@@ -910,6 +923,7 @@
 			baseConfigurationReference = 0C8E2BDF32A9BB35AB97603E /* Pods-IonNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = IonNews/IonNews.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Appal Chintapalli (4UF2278HRR)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Appal Chintapalli (4UF2278HRR)";

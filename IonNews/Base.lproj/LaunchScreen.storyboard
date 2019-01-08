@@ -6,14 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="OpenSans-Bold.ttf">
-            <string>OpenSans-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -27,30 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IONNEWS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Go-9g-IkX">
-                                <rect key="frame" x="44" y="381" width="287" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="TGX-6u-6Sc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="30"/>
-                                <color key="textColor" red="0.48627450980392156" green="0.11372549019607843" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="u17-BX-8DS">
-                                <rect key="frame" x="147.5" y="293" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="I1b-kE-p9e"/>
-                                    <constraint firstAttribute="height" constant="80" id="k4g-9C-HEn"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="LXf-bu-eyY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="u17-BX-8DS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="HlB-XW-cf1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="3Go-9g-IkX" secondAttribute="trailing" constant="28" id="VGl-GX-aVg"/>
-                            <constraint firstItem="u17-BX-8DS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="WN7-WI-kNf"/>
-                            <constraint firstItem="3Go-9g-IkX" firstAttribute="top" secondItem="u17-BX-8DS" secondAttribute="bottom" constant="8" id="rQL-kI-R6r"/>
-                            <constraint firstItem="3Go-9g-IkX" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="28" id="wJD-DG-FkG"/>
+                            <constraint firstItem="LXf-bu-eyY" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="OhY-bT-FTr"/>
+                            <constraint firstAttribute="trailing" secondItem="LXf-bu-eyY" secondAttribute="trailing" id="cKV-QA-e6H"/>
+                            <constraint firstItem="LXf-bu-eyY" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ncf-Kh-Hzh"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="LXf-bu-eyY" secondAttribute="bottom" id="wqZ-gc-Kyd"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -60,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="main_logo" width="83" height="83"/>
+        <image name="Splash" width="375" height="667"/>
     </resources>
 </document>

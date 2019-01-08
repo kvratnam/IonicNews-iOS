@@ -9,12 +9,15 @@
 #import "IonHomeContentViewController.h"
 #import "Ionconstant.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "iONHomeContentTableViewCell.h"
 
 
 @interface IonHomeContentViewController ()
 @property (nonatomic, assign) CGFloat previousOffset;
 @property (nonatomic, assign) NSInteger currentPage;
 @property (nonatomic) CGFloat lastContentOffset;
+@property (nonatomic) int currentSelection;
+
 
 
 @end
@@ -48,6 +51,7 @@
     reachability = [Reachability reachabilityForInternetConnection];
     internetStatus = [reachability currentReachabilityStatus];
     [self apiCall];
+    self.currentSelection = -1;
 }
 
 
@@ -461,6 +465,7 @@
                             
                             [_newsCollectionView reloadData];
                             [_newsTitleCollectionView reloadData];
+                            [_homeContentTbl reloadData];
                             
                             
                         });
@@ -488,7 +493,187 @@
     
 }
 
+#pragma mark -TabeViewDelegates
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return result.count;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([indexPath row] == self.currentSelection){
+        return 180;
+    }else{
+        return 120;
+    }
+    
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    iONHomeContentTableViewCell *cell;
+    cell = [tableView dequeueReusableCellWithIdentifier:@"iONHomeContentTableViewCell"];
+    //    cell.userName.text = [[[[NSUserDefaults standardUserDefaults] objectForKey:@"user_detail"] objectForKey:@"first_name"] uppercaseString];
+    
+    //    cell.userName.text = [[NSString stringWithFormat:@"%@ %@",[[[NSUserDefaults standardUserDefaults] objectForKey:@"user_detail"] objectForKey:@"first_name"],[[[NSUserDefaults standardUserDefaults] objectForKey:@"user_detail"] objectForKey:@"last_name"]] uppercaseString];
+    cell.categoryType.text = [[titles objectAtIndex:indexPath.row] uppercaseString];
+    //[[[result valueForKey:[titles objectAtIndex:indexPath.row]] objectAtIndex:0] valueForKey:@"title"];
+    cell.expDescLbl.text = [[[result valueForKey:[titles objectAtIndex:indexPath.row]] objectAtIndex:0] valueForKey:@"content"];
+    cell.expSubTitle.text = [[[result valueForKey:[titles objectAtIndex:indexPath.row]] objectAtIndex:0] valueForKey:@"sub_title"];
+    
+    cell.expTitleLbl.text = [[titles objectAtIndex:indexPath.row] uppercaseString];
+    //[[[result valueForKey:[titles objectAtIndex:indexPath.row]] objectAtIndex:0] valueForKey:@"title"];
+    
+    /*
+     507 = IoT;
+     481 = "Arrow News and Internal Updates";
+     512 = "Top Semi News";
+     513 = Processors;
+     518 = Automotive;
+     514 = "Business News";
+     511 = "New Products";
+     */
+    
+    if ([[titles objectAtIndex:indexPath.row] isEqualToString:@"Processors"]) {
+        cell.categoryImage.image = [UIImage imageNamed:@"processor"];
+        cell.expSelectionImage.image = [UIImage imageNamed:@"processorSel"];
+    }else if  ([[titles objectAtIndex:indexPath.row] isEqualToString:@"Business News"]) {
+        cell.categoryImage.image = [UIImage imageNamed:@"businessNews"];
+        cell.expSelectionImage.image = [UIImage imageNamed:@"businessNewsSel"];
+    }else if  ([[titles objectAtIndex:indexPath.row] isEqualToString:@"New Products"]) {
+        cell.categoryImage.image = [UIImage imageNamed:@"newProduct"];
+        cell.expSelectionImage.image = [UIImage imageNamed:@"newProductSel"];
+    }else if  ([[titles objectAtIndex:indexPath.row] isEqualToString:@"Electronica"]) {
+        cell.categoryImage.image = [UIImage imageNamed:@"electronica"];
+        cell.expSelectionImage.image = [UIImage imageNamed:@"electronicaSel"];
+    }else if  ([[titles objectAtIndex:indexPath.row] isEqualToString:@"Top Semi News"]) {
+        cell.categoryImage.image = [UIImage imageNamed:@"businessNews"];
+        cell.expSelectionImage.image = [UIImage imageNamed:@"businessNewsSel"];
+    }else{
+        cell.categoryImage.image = [UIImage imageNamed:@"processor"];
+        cell.expSelectionImage.image = [UIImage imageNamed:@"processorSel"];
+    }
+    
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSString *url;
+        if (internetStatus != NotReachable) {
+            url = [[[sortedObject objectAtIndex:indexPath.row] objectAtIndex:0] valueForKey:@"image"];
+        }else{
+            url = [[[result valueForKey:[titles objectAtIndex:indexPath.row]] objectAtIndex:0] valueForKey:@"image"];
+        }
+        
+        NSString* webStringURL = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSURL * URL = [NSURL URLWithString:webStringURL];
+        [cell.expImage sd_setImageWithURL:URL placeholderImage:nil];
+        
+    });
+                   
+                   
+    
+    
+    if ([indexPath row] == self.currentSelection) {
+        cell.expandableView.hidden = NO;
+        cell.homeView.hidden = YES;
+    }else{
+        cell.expandableView.hidden = YES;
+        cell.homeView.hidden = NO;
+    }
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    self.currentSelection = indexPath.row;
+    // animate
+//    [tableView beginUpdates];
+//    NSIndexPath* indexPath1 = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
+//    // Add them in an index path array
+//    NSArray* indexArray = [NSArray arrayWithObjects:indexPath1, nil];
+//    // Launch reload for the two index path
+//    [tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationFade];
+//    [tableView reloadData];
+//    [tableView endUpdates];
+//
+    
+    
+    CGPoint contentOffset = tableView.contentOffset;
+    
+    if (contentOffset.y != 0) {
+            contentOffset.y += [self tableView:tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:self.currentSelection inSection:indexPath.section]];
+    }
+    
+    [tableView reloadData];
+    [tableView setContentOffset:contentOffset];
+    
+    
+    
+//    {
+//        
+//        IonNewsDetailVC *IonDetailVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"detailVC"];
+//        
+//        //  NSNumber * num = [[[result valueForKey:[titles objectAtIndex:indexPath.row]] objectAtIndex:0] objectForKey:@"category_id"];
+//        NSNumber * num;
+//        if (internetStatus != NotReachable) {
+//            num = [[[sortedObject objectAtIndex:indexPath.row] objectAtIndex:0] objectForKey:@"category_id"];
+//        }else{
+//            num = [[[result valueForKey:[titles objectAtIndex:indexPath.row]] objectAtIndex:0] objectForKey:@"category_id"];
+//        }
+//        
+//        IonDetailVC.category_id = [num intValue];
+//        IonDetailVC.contentName = [sortedTitles objectAtIndex:indexPath.row];
+//        if (internetStatus != NotReachable) {
+//            [[requestHandler sharedInstance] storyListresponseMethod:nil viewcontroller:self category:[num intValue] page:1 withHandler:^(id  _Nullable response) {
+//                [[IonUtility sharedInstance] setNewsData:[[response objectForKey:@"data"] objectForKey:@"all_data"]];
+//                IonDetailVC.last_page = [[response objectForKey:@"last_page"] intValue];
+//                IonDetailVC.totalPage = [[[response objectForKey:@"data"] objectForKey:@"total_Count"]intValue];
+//                dispatch_async(dispatch_get_main_queue(), ^{
+////                    [self presentViewController:IonDetailVC animated:YES completion:nil];
+//                    [self.navigationController pushViewController:IonDetailVC animated:YES];
+//                });
+//                NSLog(@"self.newsdata here %@",[[IonUtility sharedInstance] newsData]);
+//                
+//            }];
+//        }else{
+//            
+//            [[IonUtility sharedInstance] setNewsData:[result objectForKey:[titles objectAtIndex:indexPath.row]]];
+//            NSArray *arr = [result objectForKey:[titles objectAtIndex:indexPath.row]];
+//            NSLog(@"count for articles %lu",(unsigned long)arr.count);
+//            IonDetailVC.totalPage = (int)arr.count;
+//            //[[IonUtility sharedInstance] setNewsData:[sortedObject objectAtIndex:indexPath.row]];
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self presentViewController:IonDetailVC animated:YES completion:nil];
+//            });
+//        }
+//        
+//        
+//        
+//        [[IonUtility sharedInstance] setIsFromProfileView:@"NO"];
+//        
+//    }
+    
+    
+    
+}
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    // sentinel
+    self.currentSelection = -1;
+    
+    // animate
+    [tableView beginUpdates];
+    NSIndexPath* indexPath1 = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
+    NSArray* indexArray = [NSArray arrayWithObjects:indexPath1, nil];
+    [tableView reloadRowsAtIndexPaths:indexArray withRowAnimation:UITableViewRowAnimationFade];
+    [tableView reloadData];
+    [tableView endUpdates];
+    
+}
 #pragma mark - action
 
 -(void)pulltoRefresh{

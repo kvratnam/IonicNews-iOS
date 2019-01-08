@@ -14,7 +14,7 @@
 -(void)moveToHomeProfile;
 
 @end
-@interface IonHomeContentViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UIScrollViewDelegate>
+@interface IonHomeContentViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property NSUInteger pageIndex;
 
@@ -25,6 +25,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *nameLbl;
 @property(nonatomic, weak)id<IonHomeContentViewControllerdelegate>delegate;
 @property (weak, nonatomic) IBOutlet UIImageView *logo;
+@property (weak, nonatomic) IBOutlet UITableView *homeContentTbl;
+
+@property (weak, nonatomic) IBOutlet UISearchBar *homeCotentSearchBar;
+
+
 
 
 @end

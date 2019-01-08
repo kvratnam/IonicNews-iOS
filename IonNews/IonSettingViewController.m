@@ -93,8 +93,14 @@
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"deviceToken"];
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
                                                              bundle:nil];
-        IonWelcomeViewController *add =
-        [storyboard instantiateViewControllerWithIdentifier:@"welcome"];
+//        IonWelcomeViewController *add =
+//        [storyboard instantiateViewControllerWithIdentifier:@"welcome"];
+        
+        IonLoginViewViewController *add =
+        [storyboard instantiateViewControllerWithIdentifier:@"logInView"];
+        
+        
+        
         
         [self presentViewController:add
                            animated:YES

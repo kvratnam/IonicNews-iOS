@@ -13,9 +13,10 @@
 
 
 
-@interface IonLoginViewViewController ()<UITextFieldDelegate, IonForgotPwdViewControllerDelegate>
+@interface IonLoginViewViewController ()<UITextFieldDelegate, IonForgotPwdViewControllerDelegate,IonSignUpViewControllerDelegate>
 
 @property (strong,nonatomic) IonForgotPwdViewController *modal;
+@property (strong,nonatomic) IonSignUpViewController *signUpModal;
 
 
 @end
@@ -31,7 +32,19 @@
     [self.emailTextField designTextField];
     [self.passwordTextField designTextField];
     
+    self.emailTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.emailTextField.leftView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"userName"]];
+    
+    self.passwordTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.passwordTextField.leftView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"password"]];
+    
     self.modal.view.tag = 99;
+    
+    self.loginBtn.layer.cornerRadius = 20.0;
+    
+    // Creating
+    waitSpinner = [[WaitSpinner alloc] init];
+    
 }
 
 
@@ -51,11 +64,19 @@
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     if (textField == self.passwordTextField) {
         self.passwordTextField.secureTextEntry = true;
+        self.passwordPlaceHolder.hidden = NO;
     }else if (textField == self.emailTextField){
         self.emailTextField.keyboardType = UIKeyboardTypeEmailAddress;
+        self.userNamePlaceHolder.hidden = NO;
     }
     
 }
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return NO;
+}
+
 
 #pragma mark - delegate for forgotPassword
 
@@ -79,6 +100,8 @@
         [self resignResponse];
         [[IonUtility sharedInstance] alertView:errMsg viewController:self];
     }else{
+
+        [waitSpinner showInView:self.view.window];
         NSDictionary * paramDict = @{
                                      @"email" : self.emailTextField.text,
                                      @"password": self.passwordTextField.text,
@@ -93,6 +116,7 @@
             [[NSUserDefaults standardUserDefaults] setValue:userInfo.token forKey:@"AUTH_KEY"];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self resignResponse];
+                [waitSpinner hide];
                 IonHomeViewController *IonHomeVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"IonHomeViewController"];
                 [self presentViewController:IonHomeVC animated:YES completion:nil];
                 
@@ -153,6 +177,7 @@
 -(void)animateView{
     
     if (self.childViewControllers.count == 0) {
+        return;
         self.modal = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"forgotVC"];
         [self addChildViewController:self.modal];
         //  self.modal.view.frame = CGRectMake(0, 568, 320, 284);
@@ -175,12 +200,65 @@
     
 }
 
+
+
+-(void)animateViewForSignUp{
+    if (self.childViewControllers.count == 0) {
+        self.signUpModal = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"signUpView"];
+        self.signUpModal.delegate = self;
+        [self addChildViewController:self.signUpModal];
+        //  self.modal.view.frame = CGRectMake(0, 568, 320, 284);
+        self.signUpModal.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        [self.view addSubview:self.signUpModal.view];
+        [UIView animateWithDuration:0.5 animations:^{
+            self.signUpModal.view.frame = CGRectMake(0, 0 , self.view.frame.size.width, self.view.frame.size.height);
+        } completion:^(BOOL finished) {
+            [self.signUpModal didMoveToParentViewController:self];
+        }];
+    }else{
+        [UIView animateWithDuration:0.5 animations:^{
+            self.signUpModal.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        } completion:^(BOOL finished) {
+            [self.signUpModal.view removeFromSuperview];
+            [self.signUpModal removeFromParentViewController];
+            self.signUpModal = nil;
+        }];
+    }
+    
+}
+
+
+
+#pragma mark - delegate for signUpView
+
+-(void)animateSignUpViewForKeyboard:(CGFloat)keyBoardSize{
+    if (self.childViewControllers.count != 0) {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.signUpModal.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        } completion:^(BOOL finished) {
+            [self.signUpModal didMoveToParentViewController:self];
+        }];
+    }else{
+        [UIView animateWithDuration:0.5 animations:^{
+            self.signUpModal.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        } completion:^(BOOL finished) {
+            [self.signUpModal.view removeFromSuperview];
+            [self.signUpModal removeFromParentViewController];
+            self.signUpModal = nil;
+        }];
+    }
+}
+
+
 #pragma mark - action
 
 
 - (IBAction)forgotPwdpressed:(id)sender {
     [self animateView];
     
+}
+- (IBAction)signupPressed:(id)sender {
+     [self animateViewForSignUp];
 }
 
 

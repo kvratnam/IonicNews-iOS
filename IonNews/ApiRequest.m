@@ -9,8 +9,8 @@
 #import "ApiRequest.h"
 #import "Ionconstant.h"
 
-static NSString *domainUrl = @"https://www.anionnews.com/api/";  //production url
-//static NSString *domainUrl = @"http://dev.anionnews.com/api/"; // New Dev URL
+//static NSString *domainUrl = @"https://www.anionnews.com/api/";  //production url
+static NSString *domainUrl = @"http://dev.anionnews.com/api/"; // New Dev URL
 
 //static NSString *domainUrl = @"http://34.212.156.81/api/";  //Old production url
 //static NSString *domainUrl = @"http://50.112.57.146/api/"; // Old Dev URL

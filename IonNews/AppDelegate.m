@@ -61,7 +61,8 @@
         self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"IonHomeViewController"];
     } else {
         // Login
-        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"welcome"];
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"logInView"];
+        //[storyboard instantiateViewControllerWithIdentifier:@"welcome"];//
     }
     [self.window makeKeyAndVisible];
     

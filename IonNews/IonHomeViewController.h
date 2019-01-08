@@ -19,4 +19,5 @@
 @property (weak, nonatomic) IBOutlet UITabBarItem *SearchTab;
 @property (weak, nonatomic) IBOutlet UITabBarItem *ProfileTab;
 @property (weak, nonatomic) IBOutlet UITabBarItem *SttingsTab;
+@property (weak, nonatomic) IBOutlet UIImageView *companyLogo;
 @end
